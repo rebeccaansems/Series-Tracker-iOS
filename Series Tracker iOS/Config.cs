@@ -8,7 +8,6 @@ namespace Series_Tracker_iOS
         public Config()
         {
         }
-
         public static string GR_Key = "HKVz69OjJ4zRhsveVMkwPQ";
     }
 }
