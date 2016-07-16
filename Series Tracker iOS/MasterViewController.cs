@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
 using Foundation;
 using UIKit;
 
@@ -23,7 +23,7 @@ namespace Series_Tracker_iOS
 
             dataSource.Objects.Insert(0, BarcodeScanController.ISBN??"yo");
 
-            dataSource.Objects.Insert(0, DateTime.Now.AddDays(1));
+            dataSource.Objects.Insert(0, "YO");
         }
 
         public override void DidReceiveMemoryWarning()
@@ -70,6 +70,8 @@ namespace Series_Tracker_iOS
                 return objects.Count;
             }
 
+            public static string ImageURL, ISBN;
+
             // Customize the appearance of table view cells.
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
@@ -77,12 +79,22 @@ namespace Series_Tracker_iOS
 
                 cell.TextLabel.Text = objects[indexPath.Row].ToString();
                 cell.DetailTextLabel.Text = "sup";
-                cell.ImageView.Image = FromUrl("http://books.google.ca/books/content?id=JlOgAwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api");
+
+                if (!objects[indexPath.Row].ToString().Equals("YO"))
+                {
+                    cell.ImageView.Image = FromUrl(BarcodeScanController.ImgURL);
+                }
+                else
+                {
+                    cell.ImageView.Image = FromUrl("http://books.google.ca/books/content?id=JlOgAwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api");
+                }
 
                 return cell;
             }
         }
 
+        // ------------------------------------------------------
+        
         static UIImage FromUrl(string uri)
         {
             using (var url = new NSUrl(uri))
@@ -91,6 +103,21 @@ namespace Series_Tracker_iOS
                 {
                     return UIImage.LoadFromData(data);
                 }
+            }
+        }
+
+        public static string getBetween(string strSource, string strStart, string strEnd)
+        {
+            int Start, End;
+            if (strSource.Contains(strStart) && strSource.Contains(strEnd))
+            {
+                Start = strSource.IndexOf(strStart, 0) + strStart.Length;
+                End = strSource.IndexOf(strEnd, Start);
+                return strSource.Substring(Start, End - Start);
+            }
+            else
+            {
+                return "";
             }
         }
     }

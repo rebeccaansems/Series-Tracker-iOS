@@ -2,12 +2,14 @@ using Foundation;
 using System;
 using System.CodeDom.Compiler;
 using UIKit;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Series_Tracker_iOS
 {
 	partial class BarcodeScanController : UIViewController
 	{
-        public static string ISBN;
+        public static string ISBN, ImgURL;
 
 		public BarcodeScanController (IntPtr handle) : base (handle)
 		{
@@ -26,10 +28,16 @@ namespace Series_Tracker_iOS
             var isbn = await scanner.Scan();
 
             ISBN = isbn.ToString();
+
+            var client = new HttpClient();
+            string url = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + ISBN;
+            var GG_Json = await client.GetStringAsync(url);
+            ImgURL = getBetween(GG_Json.ToString(), "\"thumbnail\": \"", "\"");
+
             this.PerformSegue("ScanComplete", this);
         }
-        
-        public string getBetween(string strSource, string strStart, string strEnd)
+
+        public static string getBetween(string strSource, string strStart, string strEnd)
         {
             int Start, End;
             if (strSource.Contains(strStart) && strSource.Contains(strEnd))
