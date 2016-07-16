@@ -21,7 +21,7 @@ namespace Series_Tracker_iOS
             
             TableView.Source = dataSource = new DataSource(this);
 
-            dataSource.Objects.Insert(0, DateTime.Now);
+            dataSource.Objects.Insert(0, BarcodeScanController.ISBN??"yo");
 
             dataSource.Objects.Insert(0, DateTime.Now.AddDays(1));
         }
