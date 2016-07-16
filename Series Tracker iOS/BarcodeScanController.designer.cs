@@ -24,6 +24,10 @@ namespace Series_Tracker_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UITextView Label { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextField t_ISBN { get; set; }
 
 		void ReleaseDesignerOutlets ()
@@ -35,6 +39,10 @@ namespace Series_Tracker_iOS
 			if (b_Submit != null) {
 				b_Submit.Dispose ();
 				b_Submit = null;
+			}
+			if (Label != null) {
+				Label.Dispose ();
+				Label = null;
 			}
 			if (t_ISBN != null) {
 				t_ISBN.Dispose ();

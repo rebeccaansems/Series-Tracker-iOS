@@ -234,7 +234,7 @@
                                 </state>
                                 <connections/>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9781590383391" borderStyle="roundedRect" minimumFontSize="17" id="382" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="382" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="35" y="230" width="254" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -246,6 +246,12 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="429" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Label">
+                                <rect key="frame" x="0.0" y="84" width="320" height="28"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                     </view>
                     <connections>
@@ -253,6 +259,7 @@
                         <segue id="375" destination="pGg-6v-bdr" kind="show" identifier="ScanComplete"/>
                         <outlet property="b_Submit" destination="383" id="name-outlet-383"/>
                         <outlet property="t_ISBN" destination="382" id="name-outlet-382"/>
+                        <outlet property="Label" destination="429" id="name-outlet-429"/>
                     </connections>
                     <navigationItem title="Scan" id="284" key="navigationItem"/>
                 </viewController>
