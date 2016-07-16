@@ -18,11 +18,27 @@ namespace Series_Tracker_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton b_Scan { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton b_Submit { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITextField t_ISBN { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (b_Scan != null) {
 				b_Scan.Dispose ();
 				b_Scan = null;
+			}
+			if (b_Submit != null) {
+				b_Submit.Dispose ();
+				b_Submit = null;
+			}
+			if (t_ISBN != null) {
+				t_ISBN.Dispose ();
+				t_ISBN = null;
 			}
 		}
 	}

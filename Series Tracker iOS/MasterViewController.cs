@@ -21,9 +21,10 @@ namespace Series_Tracker_iOS
             
             TableView.Source = dataSource = new DataSource(this);
 
-            dataSource.Objects.Insert(0, BarcodeScanController.ISBN??"yo");
-
-            dataSource.Objects.Insert(0, "YO");
+            for(int i=0; i<BarcodeScanController.numberSeries; i++)
+            {
+                dataSource.Objects.Insert(0, BarcodeScanController.TitleURL);
+            }
         }
 
         public override void DidReceiveMemoryWarning()
@@ -70,15 +71,13 @@ namespace Series_Tracker_iOS
                 return objects.Count;
             }
 
-            public static string ImageURL, ISBN;
-
             // Customize the appearance of table view cells.
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
                 var cell = tableView.DequeueReusableCell(CellIdentifier, indexPath);
 
                 cell.TextLabel.Text = objects[indexPath.Row].ToString();
-                cell.DetailTextLabel.Text = "sup";
+                cell.DetailTextLabel.Text = BarcodeScanController.PubDateURL;
 
                 if (!objects[indexPath.Row].ToString().Equals("YO"))
                 {
