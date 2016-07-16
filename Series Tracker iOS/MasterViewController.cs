@@ -18,12 +18,12 @@ namespace Series_Tracker_iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            
+
             TableView.Source = dataSource = new DataSource(this);
 
-            for(int i=0; i<BarcodeScanController.numberSeries; i++)
+            for (int i = (BarcodeScanController.numberSeries - 1); i > 0; i--)
             {
-                dataSource.Objects.Insert(0, BarcodeScanController.TitleURL);
+                dataSource.Objects.Insert(0, BarcodeScanController.TitleURL[i]);
             }
         }
 
@@ -77,23 +77,15 @@ namespace Series_Tracker_iOS
                 var cell = tableView.DequeueReusableCell(CellIdentifier, indexPath);
 
                 cell.TextLabel.Text = objects[indexPath.Row].ToString();
-                cell.DetailTextLabel.Text = BarcodeScanController.PubDateURL;
-
-                if (!objects[indexPath.Row].ToString().Equals("YO"))
-                {
-                    cell.ImageView.Image = FromUrl(BarcodeScanController.ImgURL);
-                }
-                else
-                {
-                    cell.ImageView.Image = FromUrl("http://books.google.ca/books/content?id=JlOgAwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api");
-                }
+                cell.DetailTextLabel.Text = BarcodeScanController.PubDateURL[indexPath.Row];
+                cell.ImageView.Image = FromUrl(BarcodeScanController.ImgURL[indexPath.Row]);
 
                 return cell;
             }
         }
 
         // ------------------------------------------------------
-        
+
         static UIImage FromUrl(string uri)
         {
             using (var url = new NSUrl(uri))

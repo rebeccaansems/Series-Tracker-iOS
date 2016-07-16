@@ -30,14 +30,7 @@ namespace Series_Tracker_iOS
             // Update the user interface for the detail item
             if (IsViewLoaded && DetailItem != null)
             {
-                if (!DetailItem.ToString().Equals("YO"))
-                {
-                    i_Image.Image = FromUrl(BarcodeScanController.ImgURL);
-                }
-                else
-                {
-                    i_Image.Image = FromUrl("http://books.google.ca/books/content?id=JlOgAwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api");
-                }
+                i_Image.Image = FromUrl("http://books.google.ca/books/content?id=JlOgAwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api");
             }
 
         }

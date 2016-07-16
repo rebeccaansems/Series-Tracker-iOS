@@ -1,5 +1,7 @@
 using Foundation;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.CodeDom.Compiler;
 using UIKit;
 using System.Net.Http;
@@ -9,9 +11,6 @@ namespace Series_Tracker_iOS
 {
     partial class BarcodeScanController : UIViewController
     {
-        public static string ISBN, ImgURL, TitleURL, PubDateURL;
-        public static int numberSeries = 3;
-
         public BarcodeScanController(IntPtr handle) : base(handle)
         {
         }
@@ -41,14 +40,19 @@ namespace Series_Tracker_iOS
             FindBookInformation();
         }
 
+        public static string ISBN;
+        public static List<string> TitleURL = new List<string>();
+        public static List<string> ImgURL = new List<string>();
+        public static List<string> PubDateURL = new List<string>();
+        public static int numberSeries = 3;
+
         async void FindBookInformation()
         {
+            TitleURL = new List<string>();
+            ImgURL = new List<string>();
+            PubDateURL = new List<string>();
+
             var client = new HttpClient();
-            string GG_url = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + ISBN;
-            var GG_Json = await client.GetStringAsync(GG_url);
-            ImgURL = getBetween(GG_Json.ToString(), "\"thumbnail\": \"", "\"");
-            TitleURL = getBetween(GG_Json.ToString(), "\"title\": \"", "\"");
-            PubDateURL = getBetween(GG_Json.ToString(), "\"publishedDate\": \"", "-");
 
             //get Series information
             string GR_url = "https://www.goodreads.com/book/isbn_to_id/" + ISBN;
@@ -63,8 +67,37 @@ namespace Series_Tracker_iOS
             GR_url = "https://www.goodreads.com/series/" + GR_SeriesID + "?format=xml&key=" + Config.GR_Key;
             GR_XML = await client.GetStringAsync(GR_url);
             numberSeries = Int32.Parse(getBetween(GR_XML, "<series_works_count>", "</series_works_count>"));
-            
+
+            GR_XML = RemoveTop(GR_XML);
+
+            for (int i = 0; i < numberSeries; i++)
+            {
+                GetBookInformation(GR_XML);
+                GR_XML = RemoveLastBook(GR_XML);
+            }
+
             this.PerformSegue("ScanComplete", this);
+        }
+
+        void GetBookInformation(string XML)
+        {
+            string title = getBetween(XML, "<title>", " (");
+            title = title.Replace("</title>", ""); ;
+            TitleURL.Add(title);
+            ImgURL.Add(getBetween(XML, "<![CDATA[", "]]>"));
+            PubDateURL.Add(getBetween(XML, "<original_publication_year>", "</original_publication_year>"));
+        }
+
+        string RemoveTop(string text)
+        {
+            string finalString = text.Remove(0, text.IndexOf("<series_works>"));
+            return finalString;
+        }
+
+        string RemoveLastBook(string text)
+        {
+            string finalString = text.Remove(0, text.IndexOf("</work>") + 7);
+            return finalString;
         }
 
         public static string getBetween(string strSource, string strStart, string strEnd)
