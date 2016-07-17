@@ -116,23 +116,23 @@
                                 <rect key="frame" x="80" y="305" width="160" height="240"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="20" y="300" width="280" height="259"/>
+                                    <rect key="frame" x="20" y="309" width="280" height="250"/>
                                     <mask key="constraints">
-                                        <include reference="527"/>
-                                        <include reference="528"/>
+                                        <include reference="533"/>
+                                        <include reference="534"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="527" firstAttribute="width" constant="280"/>
-                                    <constraint id="528" firstAttribute="height" constant="259"/>
+                                    <constraint id="533" firstAttribute="width" constant="280"/>
+                                    <constraint id="534" firstAttribute="height" constant="250"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="527"/>
-                                        <exclude reference="528"/>
+                                        <exclude reference="533"/>
+                                        <exclude reference="534"/>
                                     </mask>
                                 </variation>
                             </textView>
@@ -174,8 +174,8 @@
                                 <exclude reference="516"/>
                                 <exclude reference="520"/>
                                 <exclude reference="524"/>
-                                <exclude reference="525"/>
-                                <exclude reference="526"/>
+                                <exclude reference="531"/>
+                                <exclude reference="532"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -190,8 +190,8 @@
                                 <include reference="516"/>
                                 <include reference="520"/>
                                 <include reference="524"/>
-                                <include reference="525"/>
-                                <include reference="526"/>
+                                <include reference="531"/>
+                                <include reference="532"/>
                             </mask>
                         </variation>
                         <constraints>
@@ -199,8 +199,8 @@
                             <constraint id="516" firstItem="31" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="75"/>
                             <constraint id="520" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="32" secondAttribute="trailing"/>
                             <constraint id="524" firstItem="32" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="216"/>
-                            <constraint id="525" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="68" secondAttribute="trailing" constant="20"/>
-                            <constraint id="526" firstItem="MMQ-IT-qOo" firstAttribute="bottom" secondItem="68" secondAttribute="bottom" constant="9"/>
+                            <constraint id="531" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="68" secondAttribute="trailing" constant="20"/>
+                            <constraint id="532" firstItem="MMQ-IT-qOo" firstAttribute="bottom" secondItem="68" secondAttribute="bottom" constant="9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
@@ -262,7 +262,23 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="535" userInteractionEnabled="NO">
+                                <rect key="frame" x="150" y="438" width="20" height="20"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="232" y="274" width="20" height="20"/>
+                                </variation>
+                            </activityIndicatorView>
                         </subviews>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="535"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="535"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="b_Scan" destination="93" id="name-outlet-93"/>
@@ -271,6 +287,7 @@
                         <outlet property="t_ISBN" destination="382" id="name-outlet-382"/>
                         <outlet property="Label" destination="429" id="name-outlet-429"/>
                         <outlet property="s_IncludeAll" destination="436" id="name-outlet-436"/>
+                        <outlet property="b_Spinner" destination="535" id="name-outlet-535"/>
                     </connections>
                     <navigationItem title="Scan" id="284" key="navigationItem"/>
                 </viewController>

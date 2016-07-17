@@ -21,6 +21,7 @@ namespace Series_Tracker_iOS
 
             b_Scan.TouchUpInside += BarcodeButtonClicked;
             b_Submit.TouchUpInside += SubmitButtonClicked;
+            b_Spinner.Hidden = true;
         }
 
         void SubmitButtonClicked(object sender, EventArgs e)
@@ -49,6 +50,9 @@ namespace Series_Tracker_iOS
 
         async void FindBookInformation()
         {
+            b_Spinner.Hidden = false;
+            b_Spinner.StartAnimating();
+
             TitleURL = new List<string>();
             ImgURL = new List<string>();
             PubDateURL = new List<string>();
@@ -104,6 +108,8 @@ namespace Series_Tracker_iOS
                 }
             }
 
+            b_Spinner.Hidden = true;
+            b_Spinner.StopAnimating();
             this.PerformSegue("ScanComplete", this);
         }
 

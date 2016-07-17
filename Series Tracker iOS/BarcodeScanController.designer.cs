@@ -20,6 +20,10 @@ namespace Series_Tracker_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIActivityIndicatorView b_Spinner { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton b_Submit { get; set; }
 
 		[Outlet]
@@ -39,6 +43,10 @@ namespace Series_Tracker_iOS
 			if (b_Scan != null) {
 				b_Scan.Dispose ();
 				b_Scan = null;
+			}
+			if (b_Spinner != null) {
+				b_Spinner.Dispose ();
+				b_Spinner = null;
 			}
 			if (b_Submit != null) {
 				b_Submit.Dispose ();
