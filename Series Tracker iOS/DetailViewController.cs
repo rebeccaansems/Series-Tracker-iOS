@@ -22,9 +22,17 @@ namespace Series_Tracker_iOS
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
-
+            
             t_Title.Text = BarcodeScanController.TitleURL[itemSelected];
             i_Image.Image = FromUrl(BarcodeScanController.ImgURL[itemSelected]);
+            string description = BarcodeScanController.DescriptionsURL[itemSelected];
+
+            description = description.Replace("<italics>", "").Replace("</italics>", "");
+            description = description.Replace("<strong>", "").Replace("</strong>", "");
+            description = description.Replace("<em>", "").Replace("</em>", "");
+            description = description.Replace("<br>", "\n");
+
+            t_Description.Text = description;
         }
 
         public override void DidReceiveMemoryWarning()

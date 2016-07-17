@@ -44,6 +44,7 @@ namespace Series_Tracker_iOS
         public static List<string> TitleURL = new List<string>();
         public static List<string> ImgURL = new List<string>();
         public static List<string> PubDateURL = new List<string>();
+        public static List<string> DescriptionsURL = new List<string>();
         public static int numberSeries = 3;
 
         async void FindBookInformation()
@@ -51,6 +52,7 @@ namespace Series_Tracker_iOS
             TitleURL = new List<string>();
             ImgURL = new List<string>();
             PubDateURL = new List<string>();
+            DescriptionsURL = new List<string>();
 
             var client = new HttpClient();
 
@@ -66,6 +68,7 @@ namespace Series_Tracker_iOS
 
             GR_url = "https://www.goodreads.com/series/" + GR_SeriesID + "?format=xml&key=" + Config.GR_Key;
             GR_XML = await client.GetStringAsync(GR_url);
+
             if (s_IncludeAll.On)
             {
                 numberSeries = Int32.Parse(getBetween(GR_XML, "<series_works_count>", "</series_works_count>"));
@@ -81,7 +84,7 @@ namespace Series_Tracker_iOS
             {
                 for (int i = 0; i < numberSeries; i++)
                 {
-                    GetBookInformation(GR_XML);
+                    await GetBookInformation(GR_XML);
                     GR_XML = RemoveLastBook(GR_XML);
                 }
             }
@@ -91,7 +94,7 @@ namespace Series_Tracker_iOS
                 {
                     if (getBetween(GR_XML, "<user_position>", "</user_position>").Length <= 2)
                     {
-                        GetBookInformation(GR_XML);
+                        await GetBookInformation(GR_XML);
                     }
                     else
                     {
@@ -104,13 +107,20 @@ namespace Series_Tracker_iOS
             this.PerformSegue("ScanComplete", this);
         }
 
-        void GetBookInformation(string XML)
+        async Task GetBookInformation(string XML)
         {
-            string title = getBetween(XML, "<title>", " (");
-            title = title.Replace("</title>", ""); ;
-            TitleURL.Add(title);
+            TitleURL.Add(getBetween(XML, "<title>", " (").Replace("</title>", ""));
             ImgURL.Add(getBetween(XML, "<![CDATA[", "]]>"));
             PubDateURL.Add(getBetween(XML, "<original_publication_year>", "</original_publication_year>"));
+
+            var client = new HttpClient();
+
+            string XMLFirstPass = getBetween(XML, "<best_book>", "<title>");
+            string XMLId = getBetween(XMLFirstPass, "<id>", "</id>");
+            string GR_url = "https://www.goodreads.com/book/show/" + XMLId + ".xml?key=" + Config.GR_Key;
+            var GR_XML = await client.GetStringAsync(GR_url);
+            XMLFirstPass = getBetween(GR_XML, "<description>", "</description>");
+            DescriptionsURL.Add(getBetween(XMLFirstPass, "<![CDATA[", "]]>"));
         }
 
         string RemoveTop(string text)

@@ -82,50 +82,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="31" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="80" y="76" width="160" height="240"/>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="80" y="75" width="160" height="240"/>
-                                    <mask key="constraints">
-                                        <include reference="79"/>
-                                        <include reference="80"/>
-                                    </mask>
-                                </variation>
-                                <constraints>
-                                    <constraint id="79" firstAttribute="width" constant="160"/>
-                                    <constraint id="80" firstAttribute="height" constant="240"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="79"/>
-                                        <exclude reference="80"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" minimumFontSize="10" id="32" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
-                                <rect key="frame" x="139" y="342" width="42" height="21"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="0.0" y="330" width="320" height="21"/>
-                                    <mask key="constraints">
-                                        <include reference="75"/>
-                                        <include reference="76"/>
-                                    </mask>
-                                </variation>
-                                <constraints>
-                                    <constraint id="75" firstAttribute="width" constant="320"/>
-                                    <constraint id="76" firstAttribute="height" constant="21"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="75"/>
-                                        <exclude reference="76"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="33" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="139" y="860" width="42" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -136,6 +92,26 @@
                                     <rect key="frame" x="139" y="860" width="42" height="21"/>
                                 </variation>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="31" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="80" y="76" width="160" height="240"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <rect key="frame" x="93" y="75" width="135" height="200"/>
+                                    <mask key="constraints">
+                                        <include reference="517"/>
+                                        <include reference="518"/>
+                                    </mask>
+                                </variation>
+                                <constraints>
+                                    <constraint id="517" firstAttribute="width" constant="135"/>
+                                    <constraint id="518" firstAttribute="height" constant="200"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="517"/>
+                                        <exclude reference="518"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="68" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="80" y="305" width="160" height="240"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -143,23 +119,47 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="20" y="355" width="280" height="199"/>
+                                    <rect key="frame" x="20" y="300" width="280" height="259"/>
                                     <mask key="constraints">
-                                        <include reference="71"/>
-                                        <include reference="72"/>
+                                        <include reference="527"/>
+                                        <include reference="528"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="71" firstAttribute="width" constant="280"/>
-                                    <constraint id="72" firstAttribute="height" constant="199"/>
+                                    <constraint id="527" firstAttribute="width" constant="280"/>
+                                    <constraint id="528" firstAttribute="height" constant="259"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="71"/>
-                                        <exclude reference="72"/>
+                                        <exclude reference="527"/>
+                                        <exclude reference="528"/>
                                     </mask>
                                 </variation>
                             </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="wordWrap" minimumFontSize="10" id="32" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
+                                <rect key="frame" x="139" y="342" width="42" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <rect key="frame" x="0.0" y="280" width="320" height="24"/>
+                                    <mask key="constraints">
+                                        <include reference="522"/>
+                                        <include reference="523"/>
+                                    </mask>
+                                </variation>
+                                <constraints>
+                                    <constraint id="522" firstAttribute="width" constant="320"/>
+                                    <constraint id="523" firstAttribute="height" constant="24"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="522"/>
+                                        <exclude reference="523"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -170,12 +170,12 @@
                                 <exclude reference="68"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="69"/>
-                                <exclude reference="70"/>
-                                <exclude reference="73"/>
-                                <exclude reference="74"/>
-                                <exclude reference="77"/>
-                                <exclude reference="78"/>
+                                <exclude reference="515"/>
+                                <exclude reference="516"/>
+                                <exclude reference="520"/>
+                                <exclude reference="524"/>
+                                <exclude reference="525"/>
+                                <exclude reference="526"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -186,21 +186,21 @@
                                 <include reference="68"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="69"/>
-                                <include reference="70"/>
-                                <include reference="73"/>
-                                <include reference="74"/>
-                                <include reference="77"/>
-                                <include reference="78"/>
+                                <include reference="515"/>
+                                <include reference="516"/>
+                                <include reference="520"/>
+                                <include reference="524"/>
+                                <include reference="525"/>
+                                <include reference="526"/>
                             </mask>
                         </variation>
                         <constraints>
-                            <constraint id="69" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="68" secondAttribute="trailing" constant="20"/>
-                            <constraint id="70" firstItem="MMQ-IT-qOo" firstAttribute="bottom" secondItem="68" secondAttribute="bottom" constant="14"/>
-                            <constraint id="73" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="32" secondAttribute="trailing"/>
-                            <constraint id="74" firstItem="MMQ-IT-qOo" firstAttribute="bottom" secondItem="32" secondAttribute="bottom" constant="217"/>
-                            <constraint id="77" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="31" secondAttribute="trailing" constant="80"/>
-                            <constraint id="78" firstItem="31" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="75"/>
+                            <constraint id="515" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="31" secondAttribute="trailing" constant="92"/>
+                            <constraint id="516" firstItem="31" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="75"/>
+                            <constraint id="520" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="32" secondAttribute="trailing"/>
+                            <constraint id="524" firstItem="32" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="216"/>
+                            <constraint id="525" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="68" secondAttribute="trailing" constant="20"/>
+                            <constraint id="526" firstItem="MMQ-IT-qOo" firstAttribute="bottom" secondItem="68" secondAttribute="bottom" constant="9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
