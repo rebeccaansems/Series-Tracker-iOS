@@ -11,6 +11,14 @@ namespace Series_Tracker_iOS
 {
     partial class BarcodeScanController : UIViewController
     {
+
+        public static string ISBN;
+        public static List<string> TitleURL = new List<string>();
+        public static List<string> ImgURL = new List<string>();
+        public static List<string> PubDateURL = new List<string>();
+        public static List<string> DescriptionsURL = new List<string>();
+        public static int numberSeries;
+
         public BarcodeScanController(IntPtr handle) : base(handle)
         {
         }
@@ -47,13 +55,6 @@ namespace Series_Tracker_iOS
             }
         }
 
-        public static string ISBN;
-        public static List<string> TitleURL = new List<string>();
-        public static List<string> ImgURL = new List<string>();
-        public static List<string> PubDateURL = new List<string>();
-        public static List<string> DescriptionsURL = new List<string>();
-        public static int numberSeries = 3;
-
         async void FindBookInformation()
         {
             b_Spinner.Hidden = false;
@@ -76,26 +77,44 @@ namespace Series_Tracker_iOS
             string GR_SeriesID = getBetween(GR_XML, "<series>", "<title>");
             GR_SeriesID = getBetween(GR_SeriesID, "<id>", "</id>");
 
-            GR_url = "https://www.goodreads.com/series/" + GR_SeriesID + "?format=xml&key=" + Config.GR_Key;
-            GR_XML = await client.GetStringAsync(GR_url);
-
-            if (s_IncludeAll.On)
+            //check to ensure book is part of a series
+            if (GR_SeriesID.Equals(""))
             {
-                numberSeries = Int32.Parse(getBetween(GR_XML, "<series_works_count>", "</series_works_count>"));
+                string title = "book";
+                UIAlertView alert = new UIAlertView()
+                {
+                    Title = "Series Tracker",
+                    Message = title+" is not part of a book series"
+                };
+                alert.AddButton("OK");
+                alert.Show();
+
+                b_Spinner.Hidden = true;
+                b_Spinner.StopAnimating();
             }
             else
             {
-                numberSeries = Int32.Parse(getBetween(GR_XML, "<primary_work_count>", "</primary_work_count>"));
+                GR_url = "https://www.goodreads.com/series/" + GR_SeriesID + "?format=xml&key=" + Config.GR_Key;
+                GR_XML = await client.GetStringAsync(GR_url);
+
+                if (s_IncludeAll.On)
+                {
+                    numberSeries = Int32.Parse(getBetween(GR_XML, "<series_works_count>", "</series_works_count>"));
+                }
+                else
+                {
+                    numberSeries = Int32.Parse(getBetween(GR_XML, "<primary_work_count>", "</primary_work_count>"));
+                }
+
+                GR_XML = RemoveTop(GR_XML);
+
+                BookInformation(GR_XML, s_IncludeAll.On);
+
+                b_Spinner.Hidden = true;
+                b_Spinner.StopAnimating();
+
+                this.PerformSegue("ScanComplete", this);
             }
-
-            GR_XML = RemoveTop(GR_XML);
-
-            BookInformation(GR_XML, s_IncludeAll.On);
-
-            b_Spinner.Hidden = true;
-            b_Spinner.StopAnimating();
-
-            this.PerformSegue("ScanComplete", this);
         }
 
         void BookInformation(string XML, bool includeAll)
