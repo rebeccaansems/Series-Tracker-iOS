@@ -40,7 +40,7 @@ namespace Series_Tracker_iOS
                 var indexPath = TableView.IndexPathForSelectedRow;
                 var item = dataSource.Objects[indexPath.Row];
 
-                ((DetailViewController)segue.DestinationViewController).SetDetailItem(item);
+                ((DetailViewController)segue.DestinationViewController).SetDetailItem(indexPath.Row);
             }
         }
 

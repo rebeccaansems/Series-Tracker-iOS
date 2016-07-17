@@ -8,38 +8,23 @@ namespace Series_Tracker_iOS
 {
     public partial class DetailViewController : UIViewController
     {
-        public object DetailItem { get; set; }
+        public int itemSelected { get; set; }
 
         public DetailViewController(IntPtr handle) : base(handle)
         {
         }
 
-        public void SetDetailItem(object newDetailItem)
+        public void SetDetailItem(int newItemSelected)
         {
-            if (DetailItem != newDetailItem)
-            {
-                DetailItem = newDetailItem;
-
-                // Update the view
-                ConfigureView();
-            }
+            itemSelected = newItemSelected;
         }
-
-        void ConfigureView()
-        {
-            // Update the user interface for the detail item
-            if (IsViewLoaded && DetailItem != null)
-            {
-                i_Image.Image = FromUrl("http://books.google.ca/books/content?id=JlOgAwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api");
-            }
-
-        }
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
-            ConfigureView();
+
+            t_Title.Text = BarcodeScanController.TitleURL[itemSelected];
+            i_Image.Image = FromUrl(BarcodeScanController.ImgURL[itemSelected]);
         }
 
         public override void DidReceiveMemoryWarning()
