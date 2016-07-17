@@ -22,6 +22,10 @@ namespace Series_Tracker_iOS
             b_Scan.TouchUpInside += BarcodeButtonClicked;
             b_Submit.TouchUpInside += SubmitButtonClicked;
             b_Spinner.Hidden = true;
+
+            var g = new UITapGestureRecognizer(() => View.EndEditing(true));
+            g.CancelsTouchesInView = false; //for iOS5
+            View.AddGestureRecognizer(g);
         }
 
         void SubmitButtonClicked(object sender, EventArgs e)
@@ -35,10 +39,12 @@ namespace Series_Tracker_iOS
         {
             var scanner = new ZXing.Mobile.MobileBarcodeScanner();
             var isbn = await scanner.Scan();
-
-            ISBN = isbn.ToString();
-
-            FindBookInformation();
+            
+            if(isbn != null)
+            {
+                ISBN = isbn.ToString();
+                FindBookInformation();
+            }
         }
 
         public static string ISBN;
@@ -88,6 +94,7 @@ namespace Series_Tracker_iOS
 
             b_Spinner.Hidden = true;
             b_Spinner.StopAnimating();
+
             this.PerformSegue("ScanComplete", this);
         }
 

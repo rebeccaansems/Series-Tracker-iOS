@@ -234,9 +234,9 @@
                                 </state>
                                 <connections/>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="382" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="9780312642969">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="382" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="9780312642969" clearButtonMode="whileEditing">
                                 <rect key="frame" x="35" y="230" width="254" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="383" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -262,7 +262,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="535" userInteractionEnabled="NO">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="535" userInteractionEnabled="NO" fixedFrame="YES">
                                 <rect key="frame" x="150" y="438" width="20" height="20"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="232" y="274" width="20" height="20"/>
