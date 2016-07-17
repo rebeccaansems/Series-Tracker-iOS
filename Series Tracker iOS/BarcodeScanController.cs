@@ -84,36 +84,34 @@ namespace Series_Tracker_iOS
 
             GR_XML = RemoveTop(GR_XML);
 
-            if (s_IncludeAll.On)
-            {
-                for (int i = 0; i < numberSeries; i++)
-                {
-                    await GetBookInformation(GR_XML);
-                    GR_XML = RemoveLastBook(GR_XML);
-                }
-            }
-            else
-            {
-                for (int i = 0; i < numberSeries; i++)
-                {
-                    if (getBetween(GR_XML, "<user_position>", "</user_position>").Length <= 2)
-                    {
-                        await GetBookInformation(GR_XML);
-                    }
-                    else
-                    {
-                        i--;
-                    }
-                    GR_XML = RemoveLastBook(GR_XML);
-                }
-            }
+            BookInformation(GR_XML, s_IncludeAll.On);
 
             b_Spinner.Hidden = true;
             b_Spinner.StopAnimating();
             this.PerformSegue("ScanComplete", this);
         }
 
-        async Task GetBookInformation(string XML)
+        void BookInformation(string XML, bool includeAll)
+        {
+            for (int i = 0; i < numberSeries; i++)
+            {
+                if (getBetween(XML, "<user_position>", "</user_position>").Length <= 2 && !includeAll)
+                {
+                    GetBookInformation(XML);
+                }
+                else if (!includeAll)
+                {
+                    i--;
+                }
+                else
+                {
+                    GetBookInformation(XML);
+                }
+                XML = RemoveLastBook(XML);
+            }
+        }
+
+        async void GetBookInformation(string XML)
         {
             TitleURL.Add(getBetween(XML, "<title>", " (").Replace("</title>", ""));
             ImgURL.Add(getBetween(XML, "<![CDATA[", "]]>"));
