@@ -28,6 +28,10 @@ namespace Series_Tracker_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UISwitch s_IncludeAll { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextField t_ISBN { get; set; }
 
 		void ReleaseDesignerOutlets ()
@@ -43,6 +47,10 @@ namespace Series_Tracker_iOS
 			if (Label != null) {
 				Label.Dispose ();
 				Label = null;
+			}
+			if (s_IncludeAll != null) {
+				s_IncludeAll.Dispose ();
+				s_IncludeAll = null;
 			}
 			if (t_ISBN != null) {
 				t_ISBN.Dispose ();

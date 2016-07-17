@@ -21,7 +21,7 @@ namespace Series_Tracker_iOS
 
             TableView.Source = dataSource = new DataSource(this);
 
-            for (int i = (BarcodeScanController.numberSeries - 1); i > 0; i--)
+            for (int i = (BarcodeScanController.numberSeries-1); i >= 0; i--)
             {
                 dataSource.Objects.Insert(0, BarcodeScanController.TitleURL[i]);
             }

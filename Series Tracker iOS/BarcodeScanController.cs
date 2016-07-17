@@ -66,14 +66,39 @@ namespace Series_Tracker_iOS
 
             GR_url = "https://www.goodreads.com/series/" + GR_SeriesID + "?format=xml&key=" + Config.GR_Key;
             GR_XML = await client.GetStringAsync(GR_url);
-            numberSeries = Int32.Parse(getBetween(GR_XML, "<series_works_count>", "</series_works_count>"));
+            if (s_IncludeAll.On)
+            {
+                numberSeries = Int32.Parse(getBetween(GR_XML, "<series_works_count>", "</series_works_count>"));
+            }
+            else
+            {
+                numberSeries = Int32.Parse(getBetween(GR_XML, "<primary_work_count>", "</primary_work_count>"));
+            }
 
             GR_XML = RemoveTop(GR_XML);
 
-            for (int i = 0; i < numberSeries; i++)
+            if (s_IncludeAll.On)
             {
-                GetBookInformation(GR_XML);
-                GR_XML = RemoveLastBook(GR_XML);
+                for (int i = 0; i < numberSeries; i++)
+                {
+                    GetBookInformation(GR_XML);
+                    GR_XML = RemoveLastBook(GR_XML);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < numberSeries; i++)
+                {
+                    if (getBetween(GR_XML, "<user_position>", "</user_position>").Length <= 2)
+                    {
+                        GetBookInformation(GR_XML);
+                    }
+                    else
+                    {
+                        i--;
+                    }
+                    GR_XML = RemoveLastBook(GR_XML);
+                }
             }
 
             this.PerformSegue("ScanComplete", this);
@@ -90,7 +115,7 @@ namespace Series_Tracker_iOS
 
         string RemoveTop(string text)
         {
-            string finalString = text.Remove(0, text.IndexOf("<series_works>"));
+            string finalString = text.Remove(0, text.IndexOf("<series_work>"));
             return finalString;
         }
 
