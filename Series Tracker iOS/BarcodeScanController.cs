@@ -80,11 +80,11 @@ namespace Series_Tracker_iOS
             //check to ensure book is part of a series
             if (GR_SeriesID.Equals(""))
             {
-                string title = "book";
+                string title = getBetween(GR_html, "<title>", " by").Replace(System.Environment.NewLine, string.Empty);
                 UIAlertView alert = new UIAlertView()
                 {
-                    Title = "Series Tracker",
-                    Message = title+" is not part of a book series"
+                    Title = "Series Nonexistent",
+                    Message = title+" is not part of a book series."
                 };
                 alert.AddButton("OK");
                 alert.Show();
