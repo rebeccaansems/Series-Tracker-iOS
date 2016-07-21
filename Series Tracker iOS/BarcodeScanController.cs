@@ -19,9 +19,13 @@ namespace Series_Tracker_iOS
         public static List<string> DescriptionsURL = new List<string>();
         public static int numberSeries;
 
+        public static bool showAllBooks = true, showPublicationDates = true, showBookCovers = true;
+
         public BarcodeScanController(IntPtr handle) : base(handle)
         {
+
         }
+
 
         public override void ViewDidLoad()
         {
@@ -98,8 +102,8 @@ namespace Series_Tracker_iOS
                 {
                     GR_url = "https://www.goodreads.com/series/" + GR_SeriesID + "?format=xml&key=" + Config.GR_Key;
                     GR_XML = await client.GetStringAsync(GR_url);
-
-                    if (s_IncludeAll.On)
+                    
+                    if (showAllBooks)
                     {
                         numberSeries = Int32.Parse(getBetween(GR_XML, "<series_works_count>", "</series_works_count>"));
                     }
@@ -110,7 +114,7 @@ namespace Series_Tracker_iOS
 
                     GR_XML = RemoveTop(GR_XML);
 
-                    BookInformation(GR_XML, s_IncludeAll.On);
+                    BookInformation(GR_XML, showAllBooks);
 
                     b_Spinner.Hidden = true;
                     b_Spinner.StopAnimating();

@@ -16,6 +16,10 @@ namespace Series_Tracker_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton b_Options { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton b_Scan { get; set; }
 
 		[Outlet]
@@ -28,18 +32,14 @@ namespace Series_Tracker_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITextView Label { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UISwitch s_IncludeAll { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextField t_ISBN { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
+			if (b_Options != null) {
+				b_Options.Dispose ();
+				b_Options = null;
+			}
 			if (b_Scan != null) {
 				b_Scan.Dispose ();
 				b_Scan = null;
@@ -51,14 +51,6 @@ namespace Series_Tracker_iOS
 			if (b_Submit != null) {
 				b_Submit.Dispose ();
 				b_Submit = null;
-			}
-			if (Label != null) {
-				Label.Dispose ();
-				Label = null;
-			}
-			if (s_IncludeAll != null) {
-				s_IncludeAll.Dispose ();
-				s_IncludeAll = null;
 			}
 			if (t_ISBN != null) {
 				t_ISBN.Dispose ();
