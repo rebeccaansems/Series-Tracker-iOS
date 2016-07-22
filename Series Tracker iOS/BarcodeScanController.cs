@@ -26,13 +26,13 @@ namespace Series_Tracker_iOS
 
         }
 
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
             b_Scan.TouchUpInside += BarcodeButtonClicked;
             b_Submit.TouchUpInside += SubmitButtonClicked;
+            TabBar.ItemSelected += OptionsTapped;
             b_Spinner.Hidden = true;
 
             var g = new UITapGestureRecognizer(() => View.EndEditing(true));
@@ -42,9 +42,14 @@ namespace Series_Tracker_iOS
 
         void SubmitButtonClicked(object sender, EventArgs e)
         {
-            ISBN = t_ISBN.Text.ToString();
-
+            ISBN = t_InputISBN.Text;
             FindBookInformation();
+        }
+
+        void OptionsTapped(object sender, EventArgs e)
+        {
+            this.PerformSegue("OptionsPressed", this);
+            TabBar.SelectedItem = null;
         }
 
         async void BarcodeButtonClicked(object sender, EventArgs e)
@@ -72,9 +77,13 @@ namespace Series_Tracker_iOS
             var client = new HttpClient();
 
             //get Series information
-            string GR_url = "https://www.goodreads.com/book/isbn_to_id/" + ISBN;
-            if (IsValidIsbn13(ISBN))//check if ISBN is a valid ISBN number
+
+            string GG_url = "https://www.googleapis.com/books/v1/volumes?q=+isbn:" + ISBN;
+            string GG_Json = await client.GetStringAsync(GG_url);
+
+            if (GG_Json.Length != 47)
             {
+                string GR_url = "https://www.goodreads.com/book/isbn_to_id/" + ISBN;
                 var GR_html = await client.GetStringAsync(GR_url);
                 string GR_SeriesCode = getBetween(GR_html, "<meta property=\"og:url\" content=\"https://www.goodreads.com/work/best_book/", "\"/>");
 
@@ -102,7 +111,7 @@ namespace Series_Tracker_iOS
                 {
                     GR_url = "https://www.goodreads.com/series/" + GR_SeriesID + "?format=xml&key=" + Config.GR_Key;
                     GR_XML = await client.GetStringAsync(GR_url);
-                    
+
                     if (showAllBooks)
                     {
                         numberSeries = Int32.Parse(getBetween(GR_XML, "<series_works_count>", "</series_works_count>"));
@@ -199,41 +208,6 @@ namespace Series_Tracker_iOS
             {
                 return "";
             }
-        }
-
-        private static bool IsValidIsbn13(string isbn13)
-        {
-            bool result = false;
-
-            if (!string.IsNullOrEmpty(isbn13))
-            {
-                if (isbn13.Contains("-")) isbn13 = isbn13.Replace("-", "");
-
-                // If the length is not 13 or if it contains any non numeric chars, return false
-                long temp;
-                if (isbn13.Length != 13 || !long.TryParse(isbn13, out temp)) return false;
-
-                // Comment Source: Wikipedia
-                // The calculation of an ISBN-13 check digit begins with the first
-                // 12 digits of the thirteen-digit ISBN (thus excluding the check digit itself).
-                // Each digit, from left to right, is alternately multiplied by 1 or 3,
-                // then those products are summed modulo 10 to give a value ranging from 0 to 9.
-                // Subtracted from 10, that leaves a result from 1 to 10. A zero (0) replaces a
-                // ten (10), so, in all cases, a single check digit results.
-                int sum = 0;
-                for (int i = 0; i < 12; i++)
-                {
-                    sum += int.Parse(isbn13[i].ToString()) * (i % 2 == 1 ? 3 : 1);
-                }
-
-                int remainder = sum % 10;
-                int checkDigit = 10 - remainder;
-                if (checkDigit == 10) checkDigit = 0;
-
-                result = (checkDigit == int.Parse(isbn13[12].ToString()));
-            }
-
-            return result;
         }
     }
 }

@@ -93,6 +93,14 @@
     <Compile Include="Config.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="NavigationBar.cs" />
+    <Compile Include="NavigationBar.designer.cs">
+      <DependentUpon>NavigationBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationController.cs" />
+    <Compile Include="NavigationController.designer.cs">
+      <DependentUpon>NavigationController.cs</DependentUpon>
+    </Compile>
     <Compile Include="OptionsController.cs" />
     <Compile Include="OptionsController.designer.cs">
       <DependentUpon>OptionsController.cs</DependentUpon>

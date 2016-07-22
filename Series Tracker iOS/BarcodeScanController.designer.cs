@@ -16,7 +16,7 @@ namespace Series_Tracker_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIButton b_Options { get; set; }
+		UITabBarItem b_Options { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -32,7 +32,15 @@ namespace Series_Tracker_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITextField t_ISBN { get; set; }
+		UITextField t_InputISBN { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel t_ISBN { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITabBar TabBar { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
@@ -52,9 +60,17 @@ namespace Series_Tracker_iOS
 				b_Submit.Dispose ();
 				b_Submit = null;
 			}
+			if (t_InputISBN != null) {
+				t_InputISBN.Dispose ();
+				t_InputISBN = null;
+			}
 			if (t_ISBN != null) {
 				t_ISBN.Dispose ();
 				t_ISBN = null;
+			}
+			if (TabBar != null) {
+				TabBar.Dispose ();
+				TabBar = null;
 			}
 		}
 	}

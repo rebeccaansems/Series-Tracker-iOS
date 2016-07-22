@@ -26,10 +26,6 @@ namespace Series_Tracker_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UISwitch b_ShowPublicationDates { get; set; }
 
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UITabBarItem Options { get; set; }
-
 		void ReleaseDesignerOutlets ()
 		{
 			if (b_IncludeAllBooks != null) {
@@ -43,10 +39,6 @@ namespace Series_Tracker_iOS
 			if (b_ShowPublicationDates != null) {
 				b_ShowPublicationDates.Dispose ();
 				b_ShowPublicationDates = null;
-			}
-			if (Options != null) {
-				Options.Dispose ();
-				Options = null;
 			}
 		}
 	}
