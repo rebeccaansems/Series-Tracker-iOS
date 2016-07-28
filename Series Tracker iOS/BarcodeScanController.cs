@@ -35,6 +35,10 @@ namespace Series_Tracker_iOS
             TabBar.ItemSelected += OptionsTapped;
             b_Spinner.Hidden = true;
 
+            showAllBooks = NSUserDefaults.StandardUserDefaults.BoolForKey("showAllBooks");
+            showPublicationDates = NSUserDefaults.StandardUserDefaults.BoolForKey("showPublicationDates");
+            showBookCovers = NSUserDefaults.StandardUserDefaults.BoolForKey("showBookCovers");
+
             var g = new UITapGestureRecognizer(() => View.EndEditing(true));
             g.CancelsTouchesInView = false; //for iOS5
             View.AddGestureRecognizer(g);

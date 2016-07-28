@@ -77,9 +77,16 @@ namespace Series_Tracker_iOS
                 var cell = tableView.DequeueReusableCell(CellIdentifier, indexPath);
 
                 cell.TextLabel.Text = objects[indexPath.Row].ToString();
-                cell.DetailTextLabel.Text = BarcodeScanController.PubDateURL[indexPath.Row];
-                cell.ImageView.Image = FromUrl(BarcodeScanController.ImgURL[indexPath.Row]);
 
+                if (BarcodeScanController.showPublicationDates)
+                {
+                    cell.DetailTextLabel.Text = BarcodeScanController.PubDateURL[indexPath.Row];
+                }
+
+                if (BarcodeScanController.showBookCovers)
+                {
+                    cell.ImageView.Image = FromUrl(BarcodeScanController.ImgURL[indexPath.Row]);
+                }
                 return cell;
             }
         }
