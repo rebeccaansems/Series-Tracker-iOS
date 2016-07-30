@@ -14,21 +14,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" colorSpace="calibratedRGB" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="5718" style="IBUITableViewCellStyleSubtitle" id="m0d-ak-lc9" rowHeight="44" detailTextLabel="5719">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="25" style="IBUITableViewCellStyleSubtitle" id="m0d-ak-lc9" rowHeight="44" detailTextLabel="26">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m0d-ak-lc9" id="d3P-M7-ByW">
                                     <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+<<<<<<< HEAD
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5718">
+=======
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="25">
+>>>>>>> parent of 860a000... When publication dates are turned off, publication dates aren't shown
                                             <rect key="frame" x="16" y="4" width="35.5" height="21.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+<<<<<<< HEAD
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5719">
+=======
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="26">
+>>>>>>> parent of 860a000... When publication dates are turned off, publication dates aren't shown
                                             <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -56,7 +64,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1016" y="-528"/>
+            <point key="canvasLocation" x="1018" y="-123"/>
         </scene>
         <!--Detail-->
         <scene sceneID="Cn3-H9-jdl">
@@ -201,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1443" y="-525"/>
+            <point key="canvasLocation" x="1580" y="68"/>
         </scene>
         <scene sceneID="4262">
             <objects>
@@ -599,6 +607,7 @@
                                     <segue id="5318" destination="pGg-6v-bdr" kind="show" identifier="ScanComplete"/>
                                 </connections>
                                 <variation key="heightClass=regular-widthClass=compact">
+<<<<<<< HEAD
                                     <rect key="frame" x="0.0" y="440" width="320" height="80"/>
                                     <mask key="constraints">
                                         <include reference="5730"/>
@@ -613,6 +622,22 @@
                                     <mask key="constraints">
                                         <exclude reference="5730"/>
                                         <exclude reference="5731"/>
+=======
+                                    <rect key="frame" x="0.0" y="350" width="320" height="78"/>
+                                    <mask key="constraints">
+                                        <include reference="5434"/>
+                                        <include reference="5435"/>
+                                    </mask>
+                                </variation>
+                                <constraints>
+                                    <constraint id="5434" firstAttribute="width" constant="320"/>
+                                    <constraint id="5435" firstAttribute="height" constant="78"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5434"/>
+                                        <exclude reference="5435"/>
+>>>>>>> parent of 860a000... When publication dates are turned off, publication dates aren't shown
                                     </mask>
                                 </variation>
                             </button>
@@ -655,6 +680,7 @@
                                 <exclude reference="4685"/>
                             </mask>
                             <mask key="constraints">
+<<<<<<< HEAD
                                 <exclude reference="5488"/>
                                 <exclude reference="5489"/>
                                 <exclude reference="5728"/>
@@ -672,6 +698,23 @@
                                 <exclude reference="5747"/>
                                 <exclude reference="5748"/>
                                 <exclude reference="5749"/>
+=======
+                                <exclude reference="5423"/>
+                                <exclude reference="5424"/>
+                                <exclude reference="5426"/>
+                                <exclude reference="5427"/>
+                                <exclude reference="5428"/>
+                                <exclude reference="5431"/>
+                                <exclude reference="5432"/>
+                                <exclude reference="5433"/>
+                                <exclude reference="5436"/>
+                                <exclude reference="5444"/>
+                                <exclude reference="5445"/>
+                                <exclude reference="5484"/>
+                                <exclude reference="5485"/>
+                                <exclude reference="5488"/>
+                                <exclude reference="5489"/>
+>>>>>>> parent of 860a000... When publication dates are turned off, publication dates aren't shown
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -684,6 +727,7 @@
                                 <include reference="4685"/>
                             </mask>
                             <mask key="constraints">
+<<<<<<< HEAD
                                 <include reference="5488"/>
                                 <include reference="5489"/>
                                 <include reference="5728"/>
@@ -721,6 +765,41 @@
                             <constraint id="5747" firstItem="4677" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
                             <constraint id="5748" firstItem="4679" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
                             <constraint id="5749" firstItem="4681" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+=======
+                                <include reference="5423"/>
+                                <include reference="5424"/>
+                                <include reference="5426"/>
+                                <include reference="5427"/>
+                                <include reference="5428"/>
+                                <include reference="5431"/>
+                                <include reference="5432"/>
+                                <include reference="5433"/>
+                                <include reference="5436"/>
+                                <include reference="5444"/>
+                                <include reference="5445"/>
+                                <include reference="5484"/>
+                                <include reference="5485"/>
+                                <include reference="5488"/>
+                                <include reference="5489"/>
+                            </mask>
+                        </variation>
+                        <constraints>
+                            <constraint id="5423" firstItem="4671" firstAttribute="trailing" secondItem="4677" secondAttribute="trailing" constant="18"/>
+                            <constraint id="5424" firstItem="4677" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="130"/>
+                            <constraint id="5426" firstItem="4677" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+                            <constraint id="5427" firstItem="4671" firstAttribute="trailing" secondItem="4674" secondAttribute="trailing"/>
+                            <constraint id="5428" firstItem="4674" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="100"/>
+                            <constraint id="5431" firstItem="4674" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+                            <constraint id="5432" firstItem="4671" firstAttribute="trailing" secondItem="4682" secondAttribute="trailing"/>
+                            <constraint id="5433" firstItem="4671" firstAttribute="bottom" secondItem="4682" secondAttribute="bottom" constant="140"/>
+                            <constraint id="5436" firstItem="4682" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+                            <constraint id="5444" firstItem="4671" firstAttribute="trailing" secondItem="4679" secondAttribute="trailing" constant="114"/>
+                            <constraint id="5445" firstItem="4679" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="170"/>
+                            <constraint id="5484" firstItem="4671" firstAttribute="trailing" secondItem="4681" secondAttribute="trailing" constant="150"/>
+                            <constraint id="5485" firstItem="4681" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="214"/>
+                            <constraint id="5488" firstItem="4671" firstAttribute="trailing" secondItem="4685" secondAttribute="trailing"/>
+                            <constraint id="5489" firstItem="4671" firstAttribute="bottom" secondItem="4685" secondAttribute="bottom" constant="-1"/>
+>>>>>>> parent of 860a000... When publication dates are turned off, publication dates aren't shown
                         </constraints>
                     </view>
                     <connections>
