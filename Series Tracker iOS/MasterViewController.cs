@@ -75,18 +75,22 @@ namespace Series_Tracker_iOS
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
                 var cell = tableView.DequeueReusableCell(CellIdentifier, indexPath);
-
-                cell.TextLabel.Text = objects[indexPath.Row].ToString();
-
+                
                 if (BarcodeScanController.showPublicationDates)
                 {
                     cell.DetailTextLabel.Text = BarcodeScanController.PubDateURL[indexPath.Row];
+                } else
+                {
+                    cell.DetailTextLabel.Text = "";
                 }
-
+                
                 if (BarcodeScanController.showBookCovers)
                 {
                     cell.ImageView.Image = FromUrl(BarcodeScanController.ImgURL[indexPath.Row]);
                 }
+
+                cell.TextLabel.Text = objects[indexPath.Row].ToString();
+
                 return cell;
             }
         }
