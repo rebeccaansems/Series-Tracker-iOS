@@ -16,7 +16,11 @@ namespace Series_Tracker_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITabBarItem b_Options { get; set; }
+		UITabBarItem b_BarOptions { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITabBarItem b_BarScan { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -40,13 +44,17 @@ namespace Series_Tracker_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITabBar TabBar { get; set; }
+		UITabBar v_TabBar { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (b_Options != null) {
-				b_Options.Dispose ();
-				b_Options = null;
+			if (b_BarOptions != null) {
+				b_BarOptions.Dispose ();
+				b_BarOptions = null;
+			}
+			if (b_BarScan != null) {
+				b_BarScan.Dispose ();
+				b_BarScan = null;
 			}
 			if (b_Scan != null) {
 				b_Scan.Dispose ();
@@ -68,9 +76,9 @@ namespace Series_Tracker_iOS
 				t_ISBN.Dispose ();
 				t_ISBN = null;
 			}
-			if (TabBar != null) {
-				TabBar.Dispose ();
-				TabBar = null;
+			if (v_TabBar != null) {
+				v_TabBar.Dispose ();
+				v_TabBar = null;
 			}
 		}
 	}

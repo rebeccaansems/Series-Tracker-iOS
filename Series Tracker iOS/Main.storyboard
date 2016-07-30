@@ -22,14 +22,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5718">
-                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                            <rect key="frame" x="16" y="4" width="35.5" height="21.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5719">
-                                            <rect key="frame" x="15" y="25" width="43" height="15"/>
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -368,6 +368,34 @@
                                     </mask>
                                 </variation>
                             </switch>
+                            <tabBar contentMode="scaleToFill" id="5758" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="512" width="320" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem key="tabBarItem" title="Options" id="5768" translatesAutoresizingMaskIntoConstraints="NO" image="settings.png"/>
+                                    <tabBarItem id="5760" title="Scan" image="magnifier-tool.png"/>
+                                </items>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <rect key="frame" x="0.0" y="520" width="320" height="49"/>
+                                    <mask key="constraints">
+                                        <include reference="5763"/>
+                                    </mask>
+                                    <mask key="subviews">
+                                        <include reference="5768"/>
+                                    </mask>
+                                </variation>
+                                <constraints>
+                                    <constraint id="5763" firstAttribute="width" constant="320"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5763"/>
+                                    </mask>
+                                    <mask key="subviews">
+                                        <exclude reference="5768"/>
+                                    </mask>
+                                </variation>
+                            </tabBar>
                         </subviews>
                         <variation key="default">
                             <mask key="subviews">
@@ -377,6 +405,7 @@
                                 <exclude reference="4621"/>
                                 <exclude reference="4624"/>
                                 <exclude reference="4627"/>
+                                <exclude reference="5758"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="4630"/>
@@ -397,6 +426,8 @@
                                 <exclude reference="4664"/>
                                 <exclude reference="4665"/>
                                 <exclude reference="4666"/>
+                                <exclude reference="5761"/>
+                                <exclude reference="5762"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -407,6 +438,7 @@
                                 <include reference="4621"/>
                                 <include reference="4624"/>
                                 <include reference="4627"/>
+                                <include reference="5758"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="4630"/>
@@ -427,6 +459,8 @@
                                 <include reference="4664"/>
                                 <include reference="4665"/>
                                 <include reference="4666"/>
+                                <include reference="5761"/>
+                                <include reference="5762"/>
                             </mask>
                         </variation>
                         <constraints>
@@ -448,18 +482,23 @@
                             <constraint id="4664" firstItem="4615" firstAttribute="centerX" secondItem="4609" secondAttribute="centerX" constant="129"/>
                             <constraint id="4665" firstItem="4621" firstAttribute="centerX" secondItem="4609" secondAttribute="centerX" constant="129"/>
                             <constraint id="4666" firstItem="4627" firstAttribute="centerX" secondItem="4609" secondAttribute="centerX" constant="129"/>
+                            <constraint id="5761" firstItem="4609" firstAttribute="trailing" secondItem="5758" secondAttribute="trailing"/>
+                            <constraint id="5762" firstItem="4609" firstAttribute="bottom" secondItem="5758" secondAttribute="bottom" constant="-1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="b_IncludeAllBooks" destination="4615" id="name-outlet-4615"/>
                         <outlet property="b_ShowBookCovers" destination="4621" id="name-outlet-4621"/>
                         <outlet property="b_ShowPublicationDates" destination="4627" id="name-outlet-4627"/>
-                        <segue id="5694" destination="4670" kind="show" identifier="ScanPressed"/>
+                        <outlet property="b_BarOptions" destination="5768" id="name-outlet-5768"/>
+                        <outlet property="b_BarScan" destination="5760" id="name-outlet-5760"/>
+                        <outlet property="v_TabBar" destination="5758" id="name-outlet-5758"/>
+                        <segue id="6124" destination="4670" kind="show" identifier="ScanPressed"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4610" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="425" y="-836"/>
+            <point key="canvasLocation" x="417" y="-839"/>
         </scene>
         <scene sceneID="4669">
             <objects>
@@ -482,18 +521,18 @@
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <rect key="frame" x="0.0" y="100" width="320" height="21"/>
                                     <mask key="constraints">
-                                        <include reference="5429"/>
-                                        <include reference="5430"/>
+                                        <include reference="5744"/>
+                                        <include reference="5745"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="5429" firstAttribute="width" constant="320"/>
-                                    <constraint id="5430" firstAttribute="height" constant="21"/>
+                                    <constraint id="5744" firstAttribute="width" constant="320"/>
+                                    <constraint id="5745" firstAttribute="height" constant="21"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="5429"/>
-                                        <exclude reference="5430"/>
+                                        <exclude reference="5744"/>
+                                        <exclude reference="5745"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -502,17 +541,17 @@
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="18" y="130" width="284" height="30"/>
+                                    <rect key="frame" x="18" y="145" width="284" height="30"/>
                                     <mask key="constraints">
-                                        <include reference="5425"/>
+                                        <include reference="5735"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="5425" firstAttribute="width" constant="284"/>
+                                    <constraint id="5735" firstAttribute="width" constant="284"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="5425"/>
+                                        <exclude reference="5735"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -524,28 +563,28 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="115" y="170" width="91" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="115" y="185" width="91" height="30"/>
                                     <mask key="constraints">
-                                        <include reference="5446"/>
-                                        <include reference="5447"/>
+                                        <include reference="5738"/>
+                                        <include reference="5739"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="5446" firstAttribute="width" constant="91"/>
-                                    <constraint id="5447" firstAttribute="height" constant="30"/>
+                                    <constraint id="5738" firstAttribute="width" constant="91"/>
+                                    <constraint id="5739" firstAttribute="height" constant="30"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="5446"/>
-                                        <exclude reference="5447"/>
+                                        <exclude reference="5738"/>
+                                        <exclude reference="5739"/>
                                     </mask>
                                 </variation>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4681" animating="YES">
                                 <rect key="frame" x="150" y="214" width="20" height="20"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="150" y="214" width="20" height="20"/>
+                                    <rect key="frame" x="150" y="240" width="20" height="20"/>
                                 </variation>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4682" translatesAutoresizingMaskIntoConstraints="NO">
@@ -560,20 +599,20 @@
                                     <segue id="5318" destination="pGg-6v-bdr" kind="show" identifier="ScanComplete"/>
                                 </connections>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="0.0" y="430" width="320" height="80"/>
+                                    <rect key="frame" x="0.0" y="440" width="320" height="80"/>
                                     <mask key="constraints">
-                                        <include reference="5704"/>
-                                        <include reference="5705"/>
+                                        <include reference="5730"/>
+                                        <include reference="5731"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="5704" firstAttribute="width" constant="320"/>
-                                    <constraint id="5705" firstAttribute="height" constant="80"/>
+                                    <constraint id="5730" firstAttribute="width" constant="320"/>
+                                    <constraint id="5731" firstAttribute="height" constant="80"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="5704"/>
-                                        <exclude reference="5705"/>
+                                        <exclude reference="5730"/>
+                                        <exclude reference="5731"/>
                                     </mask>
                                 </variation>
                             </button>
@@ -581,12 +620,16 @@
                                 <rect key="frame" x="-20" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem id="4686" title="Options"/>
+                                    <tabBarItem id="4686" title="Options" image="settings.png" customClass="UITabBarItem"/>
+                                    <tabBarItem key="tabBarItem" title="Scan" id="5769" translatesAutoresizingMaskIntoConstraints="NO" image="magnifier-tool.png"/>
                                 </items>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <rect key="frame" x="0.0" y="520" width="320" height="49"/>
                                     <mask key="constraints">
                                         <include reference="5490"/>
+                                    </mask>
+                                    <mask key="subviews">
+                                        <include reference="5769"/>
                                     </mask>
                                 </variation>
                                 <constraints>
@@ -595,6 +638,9 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="5490"/>
+                                    </mask>
+                                    <mask key="subviews">
+                                        <exclude reference="5769"/>
                                     </mask>
                                 </variation>
                             </tabBar>
@@ -609,21 +655,23 @@
                                 <exclude reference="4685"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5423"/>
-                                <exclude reference="5424"/>
-                                <exclude reference="5426"/>
-                                <exclude reference="5427"/>
-                                <exclude reference="5428"/>
-                                <exclude reference="5431"/>
-                                <exclude reference="5444"/>
-                                <exclude reference="5445"/>
-                                <exclude reference="5484"/>
-                                <exclude reference="5485"/>
                                 <exclude reference="5488"/>
                                 <exclude reference="5489"/>
-                                <exclude reference="5702"/>
-                                <exclude reference="5703"/>
-                                <exclude reference="5706"/>
+                                <exclude reference="5728"/>
+                                <exclude reference="5729"/>
+                                <exclude reference="5732"/>
+                                <exclude reference="5733"/>
+                                <exclude reference="5734"/>
+                                <exclude reference="5736"/>
+                                <exclude reference="5737"/>
+                                <exclude reference="5740"/>
+                                <exclude reference="5741"/>
+                                <exclude reference="5742"/>
+                                <exclude reference="5743"/>
+                                <exclude reference="5746"/>
+                                <exclude reference="5747"/>
+                                <exclude reference="5748"/>
+                                <exclude reference="5749"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -636,52 +684,57 @@
                                 <include reference="4685"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5423"/>
-                                <include reference="5424"/>
-                                <include reference="5426"/>
-                                <include reference="5427"/>
-                                <include reference="5428"/>
-                                <include reference="5431"/>
-                                <include reference="5444"/>
-                                <include reference="5445"/>
-                                <include reference="5484"/>
-                                <include reference="5485"/>
                                 <include reference="5488"/>
                                 <include reference="5489"/>
-                                <include reference="5702"/>
-                                <include reference="5703"/>
-                                <include reference="5706"/>
+                                <include reference="5728"/>
+                                <include reference="5729"/>
+                                <include reference="5732"/>
+                                <include reference="5733"/>
+                                <include reference="5734"/>
+                                <include reference="5736"/>
+                                <include reference="5737"/>
+                                <include reference="5740"/>
+                                <include reference="5741"/>
+                                <include reference="5742"/>
+                                <include reference="5743"/>
+                                <include reference="5746"/>
+                                <include reference="5747"/>
+                                <include reference="5748"/>
+                                <include reference="5749"/>
                             </mask>
                         </variation>
                         <constraints>
-                            <constraint id="5423" firstItem="4671" firstAttribute="trailing" secondItem="4677" secondAttribute="trailing" constant="18"/>
-                            <constraint id="5424" firstItem="4677" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="130"/>
-                            <constraint id="5426" firstItem="4677" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
-                            <constraint id="5427" firstItem="4671" firstAttribute="trailing" secondItem="4674" secondAttribute="trailing"/>
-                            <constraint id="5428" firstItem="4674" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="100"/>
-                            <constraint id="5431" firstItem="4674" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
-                            <constraint id="5444" firstItem="4671" firstAttribute="trailing" secondItem="4679" secondAttribute="trailing" constant="114"/>
-                            <constraint id="5445" firstItem="4679" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="170"/>
-                            <constraint id="5484" firstItem="4671" firstAttribute="trailing" secondItem="4681" secondAttribute="trailing" constant="150"/>
-                            <constraint id="5485" firstItem="4681" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="214"/>
                             <constraint id="5488" firstItem="4671" firstAttribute="trailing" secondItem="4685" secondAttribute="trailing"/>
                             <constraint id="5489" firstItem="4671" firstAttribute="bottom" secondItem="4685" secondAttribute="bottom" constant="-1"/>
-                            <constraint id="5702" firstItem="4671" firstAttribute="trailing" secondItem="4682" secondAttribute="trailing"/>
-                            <constraint id="5703" firstItem="4671" firstAttribute="bottom" secondItem="4682" secondAttribute="bottom" constant="58"/>
-                            <constraint id="5706" firstItem="4682" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+                            <constraint id="5728" firstItem="4671" firstAttribute="trailing" secondItem="4682" secondAttribute="trailing"/>
+                            <constraint id="5729" firstItem="4671" firstAttribute="bottom" secondItem="4682" secondAttribute="bottom" constant="48"/>
+                            <constraint id="5732" firstItem="4682" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+                            <constraint id="5733" firstItem="4671" firstAttribute="trailing" secondItem="4677" secondAttribute="trailing" constant="18"/>
+                            <constraint id="5734" firstItem="4677" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="145"/>
+                            <constraint id="5736" firstItem="4671" firstAttribute="trailing" secondItem="4679" secondAttribute="trailing" constant="114"/>
+                            <constraint id="5737" firstItem="4679" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="185"/>
+                            <constraint id="5740" firstItem="4671" firstAttribute="trailing" secondItem="4681" secondAttribute="trailing" constant="150"/>
+                            <constraint id="5741" firstItem="4681" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="240"/>
+                            <constraint id="5742" firstItem="4671" firstAttribute="trailing" secondItem="4674" secondAttribute="trailing"/>
+                            <constraint id="5743" firstItem="4674" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="100"/>
+                            <constraint id="5746" firstItem="4674" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+                            <constraint id="5747" firstItem="4677" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+                            <constraint id="5748" firstItem="4679" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+                            <constraint id="5749" firstItem="4681" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="b_Options" destination="4686" id="name-outlet-4686"/>
+                        <outlet property="b_BarOptions" destination="4686" id="name-outlet-4686"/>
                         <segue id="5412" destination="4608" kind="show" identifier="OptionsPressed"/>
                         <outlet property="b_Spinner" destination="4681" id="name-outlet-4681"/>
                         <outlet property="b_Submit" destination="4679" id="name-outlet-4679"/>
                         <outlet property="b_Scan" destination="4682" id="name-outlet-4682"/>
                         <outlet property="t_ISBN" destination="4674" id="name-outlet-4674"/>
                         <outlet property="t_InputISBN" destination="4677" id="name-outlet-4677"/>
-                        <outlet property="TabBar" destination="4685" id="name-outlet-4685"/>
+                        <outlet property="v_TabBar" destination="4685" id="name-outlet-4685"/>
+                        <outlet property="b_BarScan" destination="5769" id="name-outlet-5769"/>
                     </connections>
-                    <navigationItem title="Title" id="5203" key="navigationItem"/>
+                    <navigationItem title="Scan" id="5203" key="navigationItem"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4672" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -696,5 +749,7 @@
         <image name="Icon-Small.png" width="29" height="29"/>
         <image name="Icon-60.png" width="60" height="60"/>
         <image name="Icon-Small-40.png" width="40" height="40"/>
+        <image name="settings.png" width="24" height="24"/>
+        <image name="magnifier-tool.png" width="24" height="24"/>
     </resources>
 </document>

@@ -30,9 +30,11 @@ namespace Series_Tracker_iOS
         {
             base.ViewDidLoad();
 
+            v_TabBar.SelectedItem = b_BarScan;
+
             b_Scan.TouchUpInside += BarcodeButtonClicked;
             b_Submit.TouchUpInside += SubmitButtonClicked;
-            TabBar.ItemSelected += OptionsTapped;
+            v_TabBar.ItemSelected += TabBarSelected;
             b_Spinner.Hidden = true;
 
             showAllBooks = NSUserDefaults.StandardUserDefaults.BoolForKey("showAllBooks");
@@ -50,10 +52,12 @@ namespace Series_Tracker_iOS
             FindBookInformation();
         }
 
-        void OptionsTapped(object sender, EventArgs e)
+        void TabBarSelected(object sender, EventArgs e)
         {
-            this.PerformSegue("OptionsPressed", this);
-            TabBar.SelectedItem = null;
+            if(sender == b_BarOptions)
+            {
+                this.PerformSegue("OptionsPressed", this);
+            }
         }
 
         async void BarcodeButtonClicked(object sender, EventArgs e)
