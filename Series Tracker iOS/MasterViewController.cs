@@ -30,7 +30,6 @@ namespace Series_Tracker_iOS
         public override void DidReceiveMemoryWarning()
         {
             base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
@@ -82,11 +81,20 @@ namespace Series_Tracker_iOS
                 {
                     cell.DetailTextLabel.Text = BarcodeScanController.PubDateURL[indexPath.Row];
                 }
+                else
+                {
+                    cell.DetailTextLabel.Text = "";
+                }
 
                 if (BarcodeScanController.showBookCovers)
                 {
                     cell.ImageView.Image = FromUrl(BarcodeScanController.ImgURL[indexPath.Row]);
                 }
+                else
+                {
+                    cell.ImageView.Image = null;
+                }
+
                 return cell;
             }
         }

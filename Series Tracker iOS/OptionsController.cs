@@ -36,7 +36,6 @@ namespace Series_Tracker_iOS
             if (TabBar.SelectedItem == b_BarScan)
             {
                 this.PerformSegue("ScanPressed", this);
-                //TabBar.SelectedItem = b_BarScan;
             }
         }
 
