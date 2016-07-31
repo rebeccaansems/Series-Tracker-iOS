@@ -535,17 +535,17 @@
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="18" y="130" width="284" height="30"/>
+                                    <rect key="frame" x="18" y="145" width="284" height="30"/>
                                     <mask key="constraints">
-                                        <include reference="5425"/>
+                                        <include reference="6416"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="5425" firstAttribute="width" constant="284"/>
+                                    <constraint id="6416" firstAttribute="width" constant="284"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="5425"/>
+                                        <exclude reference="6416"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -557,28 +557,28 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="115" y="170" width="91" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="115" y="185" width="91" height="30"/>
                                     <mask key="constraints">
-                                        <include reference="5446"/>
-                                        <include reference="5447"/>
+                                        <include reference="6419"/>
+                                        <include reference="6420"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="5446" firstAttribute="width" constant="91"/>
-                                    <constraint id="5447" firstAttribute="height" constant="30"/>
+                                    <constraint id="6419" firstAttribute="width" constant="91"/>
+                                    <constraint id="6420" firstAttribute="height" constant="30"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="5446"/>
-                                        <exclude reference="5447"/>
+                                        <exclude reference="6419"/>
+                                        <exclude reference="6420"/>
                                     </mask>
                                 </variation>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4681" animating="YES">
                                 <rect key="frame" x="150" y="214" width="20" height="20"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="150" y="214" width="20" height="20"/>
+                                    <rect key="frame" x="150" y="230" width="20" height="20"/>
                                 </variation>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4682" translatesAutoresizingMaskIntoConstraints="NO">
@@ -593,20 +593,20 @@
                                     <segue id="5318" destination="pGg-6v-bdr" kind="show" identifier="ScanComplete"/>
                                 </connections>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="0.0" y="430" width="320" height="80"/>
+                                    <rect key="frame" x="0.0" y="360" width="320" height="160"/>
                                     <mask key="constraints">
-                                        <include reference="5704"/>
-                                        <include reference="5705"/>
+                                        <include reference="6479"/>
+                                        <include reference="6480"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="5704" firstAttribute="width" constant="320"/>
-                                    <constraint id="5705" firstAttribute="height" constant="80"/>
+                                    <constraint id="6479" firstAttribute="width" constant="320"/>
+                                    <constraint id="6480" firstAttribute="height" constant="160"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="5704"/>
-                                        <exclude reference="5705"/>
+                                        <exclude reference="6479"/>
+                                        <exclude reference="6480"/>
                                     </mask>
                                 </variation>
                             </button>
@@ -651,21 +651,23 @@
                                 <exclude reference="5760"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5423"/>
-                                <exclude reference="5424"/>
-                                <exclude reference="5426"/>
                                 <exclude reference="5427"/>
                                 <exclude reference="5428"/>
                                 <exclude reference="5431"/>
-                                <exclude reference="5444"/>
-                                <exclude reference="5445"/>
-                                <exclude reference="5484"/>
-                                <exclude reference="5485"/>
-                                <exclude reference="5702"/>
-                                <exclude reference="5703"/>
-                                <exclude reference="5706"/>
                                 <exclude reference="5767"/>
                                 <exclude reference="5768"/>
+                                <exclude reference="6414"/>
+                                <exclude reference="6415"/>
+                                <exclude reference="6417"/>
+                                <exclude reference="6418"/>
+                                <exclude reference="6421"/>
+                                <exclude reference="6422"/>
+                                <exclude reference="6423"/>
+                                <exclude reference="6424"/>
+                                <exclude reference="6425"/>
+                                <exclude reference="6477"/>
+                                <exclude reference="6478"/>
+                                <exclude reference="6481"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -678,39 +680,43 @@
                                 <include reference="5760"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5423"/>
-                                <include reference="5424"/>
-                                <include reference="5426"/>
                                 <include reference="5427"/>
                                 <include reference="5428"/>
                                 <include reference="5431"/>
-                                <include reference="5444"/>
-                                <include reference="5445"/>
-                                <include reference="5484"/>
-                                <include reference="5485"/>
-                                <include reference="5702"/>
-                                <include reference="5703"/>
-                                <include reference="5706"/>
                                 <include reference="5767"/>
                                 <include reference="5768"/>
+                                <include reference="6414"/>
+                                <include reference="6415"/>
+                                <include reference="6417"/>
+                                <include reference="6418"/>
+                                <include reference="6421"/>
+                                <include reference="6422"/>
+                                <include reference="6423"/>
+                                <include reference="6424"/>
+                                <include reference="6425"/>
+                                <include reference="6477"/>
+                                <include reference="6478"/>
+                                <include reference="6481"/>
                             </mask>
                         </variation>
                         <constraints>
-                            <constraint id="5423" firstItem="4671" firstAttribute="trailing" secondItem="4677" secondAttribute="trailing" constant="18"/>
-                            <constraint id="5424" firstItem="4677" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="130"/>
-                            <constraint id="5426" firstItem="4677" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
                             <constraint id="5427" firstItem="4671" firstAttribute="trailing" secondItem="4674" secondAttribute="trailing"/>
                             <constraint id="5428" firstItem="4674" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="100"/>
                             <constraint id="5431" firstItem="4674" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
-                            <constraint id="5444" firstItem="4671" firstAttribute="trailing" secondItem="4679" secondAttribute="trailing" constant="114"/>
-                            <constraint id="5445" firstItem="4679" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="170"/>
-                            <constraint id="5484" firstItem="4671" firstAttribute="trailing" secondItem="4681" secondAttribute="trailing" constant="150"/>
-                            <constraint id="5485" firstItem="4681" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="214"/>
-                            <constraint id="5702" firstItem="4671" firstAttribute="trailing" secondItem="4682" secondAttribute="trailing"/>
-                            <constraint id="5703" firstItem="4671" firstAttribute="bottom" secondItem="4682" secondAttribute="bottom" constant="58"/>
-                            <constraint id="5706" firstItem="4682" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
                             <constraint id="5767" firstItem="4671" firstAttribute="trailing" secondItem="5760" secondAttribute="trailing"/>
                             <constraint id="5768" firstItem="4671" firstAttribute="bottom" secondItem="5760" secondAttribute="bottom" constant="-1"/>
+                            <constraint id="6414" firstItem="4671" firstAttribute="trailing" secondItem="4677" secondAttribute="trailing" constant="18"/>
+                            <constraint id="6415" firstItem="4677" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="145"/>
+                            <constraint id="6417" firstItem="4671" firstAttribute="trailing" secondItem="4679" secondAttribute="trailing" constant="114"/>
+                            <constraint id="6418" firstItem="4679" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="185"/>
+                            <constraint id="6421" firstItem="4671" firstAttribute="trailing" secondItem="4681" secondAttribute="trailing" constant="150"/>
+                            <constraint id="6422" firstItem="4681" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="230"/>
+                            <constraint id="6423" firstItem="4681" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+                            <constraint id="6424" firstItem="4679" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+                            <constraint id="6425" firstItem="4677" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+                            <constraint id="6477" firstItem="4671" firstAttribute="trailing" secondItem="4682" secondAttribute="trailing"/>
+                            <constraint id="6478" firstItem="4671" firstAttribute="bottom" secondItem="4682" secondAttribute="bottom" constant="48"/>
+                            <constraint id="6481" firstItem="4682" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
                         </constraints>
                     </view>
                     <connections>
