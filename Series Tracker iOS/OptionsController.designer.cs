@@ -36,7 +36,7 @@ namespace Series_Tracker_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITabBar v_TabBar { get; set; }
+		UITabBar TabBar { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
@@ -60,9 +60,9 @@ namespace Series_Tracker_iOS
 				b_ShowPublicationDates.Dispose ();
 				b_ShowPublicationDates = null;
 			}
-			if (v_TabBar != null) {
-				v_TabBar.Dispose ();
-				v_TabBar = null;
+			if (TabBar != null) {
+				TabBar.Dispose ();
+				TabBar = null;
 			}
 		}
 	}
