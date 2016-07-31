@@ -49,9 +49,19 @@ namespace Series_Tracker_iOS
             View.AddGestureRecognizer(g);
         }
 
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
+
+            b_Submit.Enabled = true;
+            b_Scan.Enabled = true;
+            b_BarOptions.Enabled = true;
+        }
+
         void SubmitButtonClicked(object sender, EventArgs e)
         {
             ISBN = t_InputISBN.Text;
+
             FindBookInformation();
         }
 
@@ -60,7 +70,6 @@ namespace Series_Tracker_iOS
             if (TabBar.SelectedItem == b_BarOptions)
             {
                 this.PerformSegue("OptionsPressed", this);
-                //TabBar.SelectedItem = b_BarOptions;
             }
         }
 
@@ -78,6 +87,10 @@ namespace Series_Tracker_iOS
 
         async void FindBookInformation()
         {
+            b_Submit.Enabled = false;
+            b_Scan.Enabled = false;
+            b_BarOptions.Enabled = false;
+
             b_Spinner.Hidden = false;
             b_Spinner.StartAnimating();
 
