@@ -44,10 +44,6 @@ namespace Series_Tracker_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITextView t_text { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		UITabBar TabBar { get; set; }
 
 		void ReleaseDesignerOutlets ()
@@ -79,10 +75,6 @@ namespace Series_Tracker_iOS
 			if (t_ISBN != null) {
 				t_ISBN.Dispose ();
 				t_ISBN = null;
-			}
-			if (t_text != null) {
-				t_text.Dispose ();
-				t_text = null;
 			}
 			if (TabBar != null) {
 				TabBar.Dispose ();

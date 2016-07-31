@@ -16,6 +16,9 @@ namespace Series_Tracker_iOS
         {
             base.ViewDidLoad();
 
+            NavigationItem.HidesBackButton = true;
+            NavigationItem.Title = "Options";
+
             TabBar.SelectedItem = b_BarOptions;
 
             b_IncludeAllBooks.On = BarcodeScanController.showAllBooks;
@@ -30,7 +33,11 @@ namespace Series_Tracker_iOS
 
         void TabBarSelected(object sender, EventArgs e)
         {
-            this.PerformSegue("ScanPressed", this);
+            if (TabBar.SelectedItem == b_BarScan)
+            {
+                this.PerformSegue("ScanPressed", this);
+                //TabBar.SelectedItem = b_BarScan;
+            }
         }
 
         public void BooksChanged(object sender, EventArgs e)

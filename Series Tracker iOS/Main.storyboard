@@ -222,7 +222,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4267" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-38" y="55"/>
+            <point key="canvasLocation" x="-45" y="-481"/>
         </scene>
         <scene sceneID="4607">
             <objects>
@@ -372,8 +372,8 @@
                                 <rect key="frame" x="-20" y="508" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem systemItem="favorites" id="5753"/>
-                                    <tabBarItem systemItem="more" id="5754"/>
+                                    <tabBarItem id="5753" title="Scan" image="magnifier-tool.png"/>
+                                    <tabBarItem id="5754" title="Options" image="settings.png"/>
                                 </items>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <rect key="frame" x="0.0" y="520" width="320" height="49"/>
@@ -484,15 +484,15 @@
                         <outlet property="b_IncludeAllBooks" destination="4615" id="name-outlet-4615"/>
                         <outlet property="b_ShowBookCovers" destination="4621" id="name-outlet-4621"/>
                         <outlet property="b_ShowPublicationDates" destination="4627" id="name-outlet-4627"/>
-                        <segue id="5694" destination="4670" kind="show" identifier="ScanPressed"/>
                         <outlet property="TabBar" destination="5752" id="name-outlet-5752"/>
-                        <outlet property="b_BarOptions" destination="5753" id="name-outlet-5753"/>
-                        <outlet property="b_BarScan" destination="5754" id="name-outlet-5754"/>
+                        <outlet property="b_BarScan" destination="5753" id="name-outlet-5753"/>
+                        <outlet property="b_BarOptions" destination="5754" id="name-outlet-5754"/>
+                        <segue id="6410" destination="4670" kind="show" identifier="ScanPressed" animates="NO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4610" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="425" y="-836"/>
+            <point key="canvasLocation" x="518" y="-882"/>
         </scene>
         <scene sceneID="4669">
             <objects>
@@ -610,16 +610,16 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <tabBar contentMode="scaleToFill" id="5760" translatesAutoresizingMaskIntoConstraints="NO" tag="3">
+                            <tabBar contentMode="scaleToFill" id="5760" translatesAutoresizingMaskIntoConstraints="NO" tag="0">
                                 <rect key="frame" x="-20" y="508" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem id="5762" title="Options" tag="0">
+                                    <tabBarItem id="5762" title="Scan" tag="0" image="magnifier-tool.png">
                                         <accessibilityConfiguration key="accessibilityConfiguration">
                                             <traits key="traits" button="YES"/>
                                         </accessibilityConfiguration>
                                     </tabBarItem>
-                                    <tabBarItem systemItem="more" id="5763">
+                                    <tabBarItem id="5763" title="Options" image="settings.png">
                                         <accessibilityConfiguration key="accessibilityConfiguration">
                                             <traits key="traits" button="YES"/>
                                         </accessibilityConfiguration>
@@ -714,21 +714,21 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue id="5412" destination="4608" kind="show" identifier="OptionsPressed"/>
+                        <segue id="5412" destination="4608" kind="show" identifier="OptionsPressed" animates="NO"/>
                         <outlet property="b_Spinner" destination="4681" id="name-outlet-4681"/>
                         <outlet property="b_Submit" destination="4679" id="name-outlet-4679"/>
                         <outlet property="b_Scan" destination="4682" id="name-outlet-4682"/>
                         <outlet property="t_ISBN" destination="4674" id="name-outlet-4674"/>
                         <outlet property="t_InputISBN" destination="4677" id="name-outlet-4677"/>
-                        <outlet property="b_BarOptions" destination="5762" id="name-outlet-5762"/>
-                        <outlet property="b_BarScan" destination="5763" id="name-outlet-5763"/>
+                        <outlet property="b_BarOptions" destination="5763" id="name-outlet-5763"/>
                         <outlet property="TabBar" destination="5760" id="name-outlet-5760"/>
+                        <outlet property="b_BarScan" destination="5762" id="name-outlet-5762"/>
                     </connections>
-                    <navigationItem title="Title" id="5203" key="navigationItem"/>
+                    <navigationItem title="Scan" id="5203" key="navigationItem"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4672" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="428" y="49"/>
+            <point key="canvasLocation" x="513" y="-163"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

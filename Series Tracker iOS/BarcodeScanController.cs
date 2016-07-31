@@ -30,6 +30,8 @@ namespace Series_Tracker_iOS
         {
             base.ViewDidLoad();
 
+            NavigationItem.HidesBackButton = true;
+
             TabBar.SelectedItem = b_BarScan;
 
             b_Scan.TouchUpInside += BarcodeButtonClicked;
@@ -55,10 +57,10 @@ namespace Series_Tracker_iOS
 
         void TabBarSelected(object sender, EventArgs e)
         {
-            t_text.Text = TabBar.Tag.ToString();
-            if (sender == b_BarOptions)
+            if (TabBar.SelectedItem == b_BarOptions)
             {
                 this.PerformSegue("OptionsPressed", this);
+                //TabBar.SelectedItem = b_BarOptions;
             }
         }
 
