@@ -161,7 +161,7 @@ namespace Series_Tracker_iOS
                 UIAlertView alert = new UIAlertView()
                 {
                     Title = "Invalid ISBN",
-                    Message = "ISBN must be 13 numbers long, start with 9, and exist, like: 9780439023481"
+                    Message = "ISBN must be 13 numbers long, start with 9, and exist, like: 9780439554930"
                 };
                 alert.AddButton("OK");
                 alert.AddButton("Retry");
@@ -176,9 +176,11 @@ namespace Series_Tracker_iOS
         {
             for (int i = 0; i < numberSeries; i++)
             {
+                DescriptionsURL.Add("");
+
                 if (getBetween(XML, "<user_position>", "</user_position>").Length <= 2 && !includeAll)
                 {
-                    GetBookInformation(XML);
+                    GetBookInformation(XML, i);
                 }
                 else if (!includeAll)
                 {
@@ -186,13 +188,14 @@ namespace Series_Tracker_iOS
                 }
                 else
                 {
-                    GetBookInformation(XML);
+                    GetBookInformation(XML, i);
                 }
+
                 XML = RemoveLastBook(XML);
             }
         }
 
-        async void GetBookInformation(string XML)
+        async void GetBookInformation(string XML, int i)
         {
             TitleURL.Add(getBetween(XML, "<title>", " (").Replace("</title>", ""));
             ImgURL.Add(getBetween(XML, "<![CDATA[", "]]>"));
@@ -205,7 +208,7 @@ namespace Series_Tracker_iOS
             string GR_url = "https://www.goodreads.com/book/show/" + XMLId + ".xml?key=" + Config.GR_Key;
             var GR_XML = await client.GetStringAsync(GR_url);
             XMLFirstPass = getBetween(GR_XML, "<description>", "</description>");
-            DescriptionsURL.Add(getBetween(XMLFirstPass, "<![CDATA[", "]]>"));
+            DescriptionsURL[i] = (getBetween(XMLFirstPass, "<![CDATA[", "]]>"));
         }
 
         string RemoveTop(string text)

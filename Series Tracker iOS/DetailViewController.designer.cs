@@ -11,35 +11,46 @@ using UIKit;
 
 namespace Series_Tracker_iOS
 {
-	[Register ("DetailViewController")]
-	partial class DetailViewController
-	{
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIImageView i_Image { get; set; }
+    [Register ("DetailViewController")]
+    partial class DetailViewController
+    {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView i_Image { get; set; }
 
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UITextView t_Description { get; set; }
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView t_Description { get; set; }
 
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel t_Title { get; set; }
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel t_ISBN { get; set; }
 
-		void ReleaseDesignerOutlets ()
-		{
-			if (i_Image != null) {
-				i_Image.Dispose ();
-				i_Image = null;
-			}
-			if (t_Description != null) {
-				t_Description.Dispose ();
-				t_Description = null;
-			}
-			if (t_Title != null) {
-				t_Title.Dispose ();
-				t_Title = null;
-			}
-		}
-	}
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel t_Title { get; set; }
+
+        void ReleaseDesignerOutlets ()
+        {
+            if (i_Image != null) {
+                i_Image.Dispose ();
+                i_Image = null;
+            }
+
+            if (t_Description != null) {
+                t_Description.Dispose ();
+                t_Description = null;
+            }
+
+            if (t_ISBN != null) {
+                t_ISBN.Dispose ();
+                t_ISBN = null;
+            }
+
+            if (t_Title != null) {
+                t_Title.Dispose ();
+                t_Title = null;
+            }
+        }
+    }
 }
