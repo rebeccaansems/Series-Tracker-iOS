@@ -133,20 +133,20 @@
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="0.0" y="280" width="320" height="24"/>
+                                    <rect key="frame" x="20" y="280" width="280" height="24"/>
                                     <mask key="constraints">
-                                        <include reference="522"/>
-                                        <include reference="523"/>
+                                        <include reference="6540"/>
+                                        <include reference="6541"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="522" firstAttribute="width" constant="320"/>
-                                    <constraint id="523" firstAttribute="height" constant="24"/>
+                                    <constraint id="6540" firstAttribute="width" constant="280"/>
+                                    <constraint id="6541" firstAttribute="height" constant="24"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="522"/>
-                                        <exclude reference="523"/>
+                                        <exclude reference="6540"/>
+                                        <exclude reference="6541"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -157,20 +157,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="0.0" y="303" width="320" height="21"/>
+                                    <rect key="frame" x="20" y="303" width="280" height="21"/>
                                     <mask key="constraints">
-                                        <include reference="6527"/>
-                                        <include reference="6528"/>
+                                        <include reference="6546"/>
+                                        <include reference="6547"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="6527" firstAttribute="width" constant="320"/>
-                                    <constraint id="6528" firstAttribute="height" constant="21"/>
+                                    <constraint id="6546" firstAttribute="width" constant="280"/>
+                                    <constraint id="6547" firstAttribute="height" constant="21"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="6527"/>
-                                        <exclude reference="6528"/>
+                                        <exclude reference="6546"/>
+                                        <exclude reference="6547"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -187,15 +187,16 @@
                             <mask key="constraints">
                                 <exclude reference="515"/>
                                 <exclude reference="516"/>
-                                <exclude reference="520"/>
-                                <exclude reference="524"/>
                                 <exclude reference="6495"/>
                                 <exclude reference="6521"/>
                                 <exclude reference="6522"/>
                                 <exclude reference="6523"/>
-                                <exclude reference="6525"/>
-                                <exclude reference="6529"/>
-                                <exclude reference="6530"/>
+                                <exclude reference="6538"/>
+                                <exclude reference="6542"/>
+                                <exclude reference="6543"/>
+                                <exclude reference="6544"/>
+                                <exclude reference="6548"/>
+                                <exclude reference="6549"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -209,29 +210,31 @@
                             <mask key="constraints">
                                 <include reference="515"/>
                                 <include reference="516"/>
-                                <include reference="520"/>
-                                <include reference="524"/>
                                 <include reference="6495"/>
                                 <include reference="6521"/>
                                 <include reference="6522"/>
                                 <include reference="6523"/>
-                                <include reference="6525"/>
-                                <include reference="6529"/>
-                                <include reference="6530"/>
+                                <include reference="6538"/>
+                                <include reference="6542"/>
+                                <include reference="6543"/>
+                                <include reference="6544"/>
+                                <include reference="6548"/>
+                                <include reference="6549"/>
                             </mask>
                         </variation>
                         <constraints>
                             <constraint id="515" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="31" secondAttribute="trailing" constant="92"/>
                             <constraint id="516" firstItem="31" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="75"/>
-                            <constraint id="520" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="32" secondAttribute="trailing"/>
-                            <constraint id="524" firstItem="32" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="216"/>
                             <constraint id="6495" firstItem="31" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
                             <constraint id="6521" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="68" secondAttribute="trailing" constant="20"/>
                             <constraint id="6522" firstItem="MMQ-IT-qOo" firstAttribute="bottom" secondItem="68" secondAttribute="bottom" constant="8"/>
                             <constraint id="6523" firstItem="68" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
-                            <constraint id="6525" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="6516" secondAttribute="trailing"/>
-                            <constraint id="6529" firstItem="6516" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="239"/>
-                            <constraint id="6530" firstItem="6516" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
+                            <constraint id="6538" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="32" secondAttribute="trailing" constant="20"/>
+                            <constraint id="6542" firstItem="32" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="216"/>
+                            <constraint id="6543" firstItem="32" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
+                            <constraint id="6544" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="6516" secondAttribute="trailing" constant="20"/>
+                            <constraint id="6548" firstItem="6516" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="239"/>
+                            <constraint id="6549" firstItem="6516" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>

@@ -25,13 +25,13 @@ namespace Series_Tracker_iOS
             
             t_Title.Text = BarcodeScanController.TitleURL[itemSelected];
             i_Image.Image = FromUrl(BarcodeScanController.ImgURL[itemSelected]);
-            string description = BarcodeScanController.DescriptionsURL[itemSelected];
+            t_ISBN.Text = BarcodeScanController.isbnURL[itemSelected];
 
+            string description = BarcodeScanController.DescriptionsURL[itemSelected];
             description = description.Replace("<italics>", "").Replace("</italics>", "");
             description = description.Replace("<strong>", "").Replace("</strong>", "");
             description = description.Replace("<em>", "").Replace("</em>", "");
             description = description.Replace("<br>", "\n");
-
             t_Description.Text = description;
         }
 

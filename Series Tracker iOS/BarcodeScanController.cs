@@ -16,6 +16,7 @@ namespace Series_Tracker_iOS
         public static List<string> TitleURL = new List<string>();
         public static List<string> ImgURL = new List<string>();
         public static List<string> PubDateURL = new List<string>();
+        public static List<string> isbnURL = new List<string>();
         public static List<string> DescriptionsURL = new List<string>();
         public static int numberSeries;
 
@@ -177,6 +178,7 @@ namespace Series_Tracker_iOS
             for (int i = 0; i < numberSeries; i++)
             {
                 DescriptionsURL.Add("");
+                isbnURL.Add("");
 
                 if (getBetween(XML, "<user_position>", "</user_position>").Length <= 2 && !includeAll)
                 {
@@ -207,8 +209,12 @@ namespace Series_Tracker_iOS
             string XMLId = getBetween(XMLFirstPass, "<id>", "</id>");
             string GR_url = "https://www.goodreads.com/book/show/" + XMLId + ".xml?key=" + Config.GR_Key;
             var GR_XML = await client.GetStringAsync(GR_url);
+
+            XMLFirstPass = getBetween(GR_XML, "<isbn13>", "</isbn13>"); ;
+            isbnURL[i] = getBetween(XMLFirstPass, "<![CDATA[", "]]>");
+
             XMLFirstPass = getBetween(GR_XML, "<description>", "</description>");
-            DescriptionsURL[i] = (getBetween(XMLFirstPass, "<![CDATA[", "]]>"));
+            DescriptionsURL[i] = getBetween(XMLFirstPass, "<![CDATA[", "]]>");
         }
 
         string RemoveTop(string text)
