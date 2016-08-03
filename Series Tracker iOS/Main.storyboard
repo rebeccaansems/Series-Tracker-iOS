@@ -22,16 +22,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5718">
-                                            <rect key="frame" x="16" y="4" width="35.5" height="21.5"/>
+                                            <rect key="frame" x="16" y="5" width="33.5" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5719">
-                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="16" y="26" width="40.5" height="14"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -80,100 +80,100 @@
                                     <rect key="frame" x="139" y="860" width="42" height="21"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="31" translatesAutoresizingMaskIntoConstraints="NO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="31" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="80" y="76" width="160" height="240"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="93" y="75" width="135" height="200"/>
+                                    <rect key="frame" x="110" y="75" width="100" height="150"/>
                                     <mask key="constraints">
-                                        <include reference="517"/>
-                                        <include reference="518"/>
+                                        <include reference="6627"/>
+                                        <include reference="6628"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="517" firstAttribute="width" constant="135"/>
-                                    <constraint id="518" firstAttribute="height" constant="200"/>
+                                    <constraint id="6627" firstAttribute="width" constant="100"/>
+                                    <constraint id="6628" firstAttribute="height" constant="150"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="517"/>
-                                        <exclude reference="518"/>
+                                        <exclude reference="6627"/>
+                                        <exclude reference="6628"/>
                                     </mask>
                                 </variation>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="68" translatesAutoresizingMaskIntoConstraints="NO" editable="NO" selectable="NO">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="68" translatesAutoresizingMaskIntoConstraints="NO" editable="NO" showsHorizontalScrollIndicator="NO" selectable="NO">
                                 <rect key="frame" x="80" y="305" width="160" height="240"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="20" y="325" width="280" height="235"/>
+                                    <rect key="frame" x="20" y="284" width="280" height="276"/>
                                     <mask key="constraints">
-                                        <include reference="6519"/>
-                                        <include reference="6520"/>
+                                        <include reference="6620"/>
+                                        <include reference="6621"/>
                                     </mask>
                                 </variation>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1"/>
                                 <color key="tintColor" colorSpace="calibratedRGB" red="0" green="0.52549019607843139" blue="1" alpha="1"/>
                                 <constraints>
-                                    <constraint id="6519" firstAttribute="width" constant="280"/>
-                                    <constraint id="6520" firstAttribute="height" constant="235"/>
+                                    <constraint id="6620" firstAttribute="width" constant="280"/>
+                                    <constraint id="6621" firstAttribute="height" constant="276"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="6519"/>
-                                        <exclude reference="6520"/>
+                                        <exclude reference="6620"/>
+                                        <exclude reference="6621"/>
                                     </mask>
                                 </variation>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="wordWrap" minimumFontSize="10" id="32" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
                                 <rect key="frame" x="139" y="342" width="42" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="20" y="280" width="280" height="24"/>
+                                    <rect key="frame" x="20" y="230" width="280" height="24"/>
                                     <mask key="constraints">
-                                        <include reference="6540"/>
-                                        <include reference="6541"/>
+                                        <include reference="6610"/>
+                                        <include reference="6611"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="6540" firstAttribute="width" constant="280"/>
-                                    <constraint id="6541" firstAttribute="height" constant="24"/>
+                                    <constraint id="6610" firstAttribute="width" constant="280"/>
+                                    <constraint id="6611" firstAttribute="height" constant="24"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="6540"/>
-                                        <exclude reference="6541"/>
+                                        <exclude reference="6610"/>
+                                        <exclude reference="6611"/>
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ISBN" lineBreakMode="tailTruncation" minimumFontSize="10" id="6516" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
-                                <rect key="frame" x="139" y="303" width="42" height="21"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6635" translatesAutoresizingMaskIntoConstraints="NO" text="ISBN" textAlignment="center" editable="NO" selectable="NO">
+                                <rect key="frame" x="0.0" y="12" width="160" height="240"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="20" y="303" width="280" height="21"/>
+                                    <rect key="frame" x="20" y="256" width="280" height="30"/>
                                     <mask key="constraints">
-                                        <include reference="6546"/>
-                                        <include reference="6547"/>
+                                        <include reference="6643"/>
+                                        <include reference="6644"/>
                                     </mask>
                                 </variation>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="1"/>
                                 <constraints>
-                                    <constraint id="6546" firstAttribute="width" constant="280"/>
-                                    <constraint id="6547" firstAttribute="height" constant="21"/>
+                                    <constraint id="6643" firstAttribute="width" constant="280"/>
+                                    <constraint id="6644" firstAttribute="height" constant="30"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="6546"/>
-                                        <exclude reference="6547"/>
+                                        <exclude reference="6643"/>
+                                        <exclude reference="6644"/>
                                     </mask>
                                 </variation>
-                            </label>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1"/>
                         <variation key="default">
@@ -182,21 +182,21 @@
                                 <exclude reference="32"/>
                                 <exclude reference="33"/>
                                 <exclude reference="68"/>
-                                <exclude reference="6516"/>
+                                <exclude reference="6635"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="515"/>
-                                <exclude reference="516"/>
-                                <exclude reference="6495"/>
-                                <exclude reference="6521"/>
-                                <exclude reference="6522"/>
-                                <exclude reference="6523"/>
-                                <exclude reference="6538"/>
-                                <exclude reference="6542"/>
-                                <exclude reference="6543"/>
-                                <exclude reference="6544"/>
-                                <exclude reference="6548"/>
-                                <exclude reference="6549"/>
+                                <exclude reference="6608"/>
+                                <exclude reference="6609"/>
+                                <exclude reference="6618"/>
+                                <exclude reference="6619"/>
+                                <exclude reference="6622"/>
+                                <exclude reference="6624"/>
+                                <exclude reference="6625"/>
+                                <exclude reference="6626"/>
+                                <exclude reference="6629"/>
+                                <exclude reference="6641"/>
+                                <exclude reference="6642"/>
+                                <exclude reference="6645"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -205,36 +205,36 @@
                                 <include reference="32"/>
                                 <include reference="33"/>
                                 <include reference="68"/>
-                                <include reference="6516"/>
+                                <include reference="6635"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="515"/>
-                                <include reference="516"/>
-                                <include reference="6495"/>
-                                <include reference="6521"/>
-                                <include reference="6522"/>
-                                <include reference="6523"/>
-                                <include reference="6538"/>
-                                <include reference="6542"/>
-                                <include reference="6543"/>
-                                <include reference="6544"/>
-                                <include reference="6548"/>
-                                <include reference="6549"/>
+                                <include reference="6608"/>
+                                <include reference="6609"/>
+                                <include reference="6618"/>
+                                <include reference="6619"/>
+                                <include reference="6622"/>
+                                <include reference="6624"/>
+                                <include reference="6625"/>
+                                <include reference="6626"/>
+                                <include reference="6629"/>
+                                <include reference="6641"/>
+                                <include reference="6642"/>
+                                <include reference="6645"/>
                             </mask>
                         </variation>
                         <constraints>
-                            <constraint id="515" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="31" secondAttribute="trailing" constant="92"/>
-                            <constraint id="516" firstItem="31" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="75"/>
-                            <constraint id="6495" firstItem="31" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
-                            <constraint id="6521" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="68" secondAttribute="trailing" constant="20"/>
-                            <constraint id="6522" firstItem="MMQ-IT-qOo" firstAttribute="bottom" secondItem="68" secondAttribute="bottom" constant="8"/>
-                            <constraint id="6523" firstItem="68" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
-                            <constraint id="6538" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="32" secondAttribute="trailing" constant="20"/>
-                            <constraint id="6542" firstItem="32" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="216"/>
-                            <constraint id="6543" firstItem="32" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
-                            <constraint id="6544" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="6516" secondAttribute="trailing" constant="20"/>
-                            <constraint id="6548" firstItem="6516" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="239"/>
-                            <constraint id="6549" firstItem="6516" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
+                            <constraint id="6608" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="32" secondAttribute="trailing" constant="20"/>
+                            <constraint id="6609" firstItem="32" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="230"/>
+                            <constraint id="6618" firstItem="MMQ-IT-qOo" firstAttribute="bottom" secondItem="68" secondAttribute="bottom" constant="8"/>
+                            <constraint id="6619" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="68" secondAttribute="trailing" constant="20"/>
+                            <constraint id="6622" firstItem="68" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
+                            <constraint id="6624" firstItem="32" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
+                            <constraint id="6625" firstItem="31" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="75"/>
+                            <constraint id="6626" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="31" secondAttribute="trailing" constant="110"/>
+                            <constraint id="6629" firstItem="31" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
+                            <constraint id="6641" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="6635" secondAttribute="trailing" constant="20"/>
+                            <constraint id="6642" firstItem="6635" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="256"/>
+                            <constraint id="6645" firstItem="6635" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
@@ -242,7 +242,7 @@
                         <outlet property="t_Title" destination="32" id="name-outlet-32"/>
                         <outlet property="i_Image" destination="31" id="name-outlet-31"/>
                         <outlet property="t_Description" destination="68" id="name-outlet-68"/>
-                        <outlet property="t_ISBN" destination="6516" id="name-outlet-6516"/>
+                        <outlet property="t_ISBN" destination="6635" id="name-outlet-6635"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
@@ -257,8 +257,8 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <color key="barTintColor" colorSpace="calibratedRGB" red="1" green="0.60392156862745094" blue="0.17254901960784314" alpha="1"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" colorSpace="calibratedRGB" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1"/>
                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                            <color key="textColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -285,7 +285,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Include all books" lineBreakMode="tailTruncation" minimumFontSize="10" id="4612" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="20" y="420" width="230" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -309,27 +309,27 @@
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4615">
                                 <rect key="frame" x="250" y="514" width="79" height="27"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="249" y="84" width="82" height="27"/>
+                                    <rect key="frame" x="249" y="84" width="84" height="27"/>
                                     <mask key="constraints">
-                                        <include reference="4662"/>
-                                        <include reference="4663"/>
+                                        <include reference="6568"/>
+                                        <include reference="6569"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="4662" firstAttribute="width" constant="79"/>
-                                    <constraint id="4663" firstAttribute="height" constant="27"/>
+                                    <constraint id="6568" firstAttribute="width" constant="82"/>
+                                    <constraint id="6569" firstAttribute="height" constant="27"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="4662"/>
-                                        <exclude reference="4663"/>
+                                        <exclude reference="6568"/>
+                                        <exclude reference="6569"/>
                                     </mask>
                                 </variation>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Show book covers" lineBreakMode="tailTruncation" minimumFontSize="10" id="4618" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="20" y="520" width="230" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -353,27 +353,27 @@
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4621">
                                 <rect key="frame" x="250" y="414" width="79" height="27"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="249" y="134" width="82" height="27"/>
+                                    <rect key="frame" x="249" y="134" width="84" height="27"/>
                                     <mask key="constraints">
-                                        <include reference="4622"/>
-                                        <include reference="4623"/>
+                                        <include reference="6573"/>
+                                        <include reference="6574"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="4622" firstAttribute="width" constant="79"/>
-                                    <constraint id="4623" firstAttribute="height" constant="27"/>
+                                    <constraint id="6573" firstAttribute="width" constant="82"/>
+                                    <constraint id="6574" firstAttribute="height" constant="27"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="4622"/>
-                                        <exclude reference="4623"/>
+                                        <exclude reference="6573"/>
+                                        <exclude reference="6574"/>
                                     </mask>
                                 </variation>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Show publication dates" lineBreakMode="tailTruncation" minimumFontSize="10" id="4624" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="20" y="470" width="230" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -397,20 +397,20 @@
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4627">
                                 <rect key="frame" x="250" y="464" width="79" height="27"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="249" y="184" width="82" height="27"/>
+                                    <rect key="frame" x="249" y="184" width="84" height="27"/>
                                     <mask key="constraints">
-                                        <include reference="4656"/>
-                                        <include reference="4657"/>
+                                        <include reference="6578"/>
+                                        <include reference="6579"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="4656" firstAttribute="width" constant="79"/>
-                                    <constraint id="4657" firstAttribute="height" constant="27"/>
+                                    <constraint id="6578" firstAttribute="width" constant="82"/>
+                                    <constraint id="6579" firstAttribute="height" constant="27"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="4656"/>
-                                        <exclude reference="4657"/>
+                                        <exclude reference="6578"/>
+                                        <exclude reference="6579"/>
                                     </mask>
                                 </variation>
                             </switch>
@@ -457,17 +457,17 @@
                                 <exclude reference="4640"/>
                                 <exclude reference="4641"/>
                                 <exclude reference="4644"/>
-                                <exclude reference="4654"/>
-                                <exclude reference="4655"/>
-                                <exclude reference="4658"/>
-                                <exclude reference="4659"/>
-                                <exclude reference="4660"/>
-                                <exclude reference="4661"/>
-                                <exclude reference="4664"/>
-                                <exclude reference="4665"/>
-                                <exclude reference="4666"/>
                                 <exclude reference="5755"/>
                                 <exclude reference="5756"/>
+                                <exclude reference="6566"/>
+                                <exclude reference="6567"/>
+                                <exclude reference="6570"/>
+                                <exclude reference="6571"/>
+                                <exclude reference="6572"/>
+                                <exclude reference="6575"/>
+                                <exclude reference="6576"/>
+                                <exclude reference="6577"/>
+                                <exclude reference="6580"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -490,17 +490,17 @@
                                 <include reference="4640"/>
                                 <include reference="4641"/>
                                 <include reference="4644"/>
-                                <include reference="4654"/>
-                                <include reference="4655"/>
-                                <include reference="4658"/>
-                                <include reference="4659"/>
-                                <include reference="4660"/>
-                                <include reference="4661"/>
-                                <include reference="4664"/>
-                                <include reference="4665"/>
-                                <include reference="4666"/>
                                 <include reference="5755"/>
                                 <include reference="5756"/>
+                                <include reference="6566"/>
+                                <include reference="6567"/>
+                                <include reference="6570"/>
+                                <include reference="6571"/>
+                                <include reference="6572"/>
+                                <include reference="6575"/>
+                                <include reference="6576"/>
+                                <include reference="6577"/>
+                                <include reference="6580"/>
                             </mask>
                         </variation>
                         <constraints>
@@ -513,17 +513,17 @@
                             <constraint id="4640" firstItem="4624" firstAttribute="leading" secondItem="4609" secondAttribute="leading" constant="20"/>
                             <constraint id="4641" firstItem="4624" firstAttribute="top" secondItem="4609" secondAttribute="top" constant="190"/>
                             <constraint id="4644" firstItem="4609" firstAttribute="centerX" secondItem="4624" secondAttribute="centerX" constant="25"/>
-                            <constraint id="4654" firstItem="4609" firstAttribute="trailing" secondItem="4627" secondAttribute="trailing" constant="-9"/>
-                            <constraint id="4655" firstItem="4627" firstAttribute="top" secondItem="4609" secondAttribute="top" constant="184"/>
-                            <constraint id="4658" firstItem="4609" firstAttribute="trailing" secondItem="4621" secondAttribute="trailing" constant="-9"/>
-                            <constraint id="4659" firstItem="4621" firstAttribute="top" secondItem="4609" secondAttribute="top" constant="134"/>
-                            <constraint id="4660" firstItem="4609" firstAttribute="trailing" secondItem="4615" secondAttribute="trailing" constant="-9"/>
-                            <constraint id="4661" firstItem="4615" firstAttribute="top" secondItem="4609" secondAttribute="top" constant="84"/>
-                            <constraint id="4664" firstItem="4615" firstAttribute="centerX" secondItem="4609" secondAttribute="centerX" constant="129"/>
-                            <constraint id="4665" firstItem="4621" firstAttribute="centerX" secondItem="4609" secondAttribute="centerX" constant="129"/>
-                            <constraint id="4666" firstItem="4627" firstAttribute="centerX" secondItem="4609" secondAttribute="centerX" constant="129"/>
                             <constraint id="5755" firstItem="4609" firstAttribute="trailing" secondItem="5752" secondAttribute="trailing"/>
                             <constraint id="5756" firstItem="4609" firstAttribute="bottom" secondItem="5752" secondAttribute="bottom" constant="-1"/>
+                            <constraint id="6566" firstItem="4609" firstAttribute="trailing" secondItem="4615" secondAttribute="trailing" constant="-11"/>
+                            <constraint id="6567" firstItem="4615" firstAttribute="top" secondItem="4609" secondAttribute="top" constant="84"/>
+                            <constraint id="6570" firstItem="4615" firstAttribute="centerX" secondItem="4609" secondAttribute="centerX" constant="130"/>
+                            <constraint id="6571" firstItem="4609" firstAttribute="trailing" secondItem="4621" secondAttribute="trailing" constant="-11"/>
+                            <constraint id="6572" firstItem="4621" firstAttribute="top" secondItem="4609" secondAttribute="top" constant="134"/>
+                            <constraint id="6575" firstItem="4621" firstAttribute="centerX" secondItem="4609" secondAttribute="centerX" constant="130"/>
+                            <constraint id="6576" firstItem="4609" firstAttribute="trailing" secondItem="4627" secondAttribute="trailing" constant="-11"/>
+                            <constraint id="6577" firstItem="4627" firstAttribute="top" secondItem="4609" secondAttribute="top" constant="184"/>
+                            <constraint id="6580" firstItem="4627" firstAttribute="centerX" secondItem="4609" secondAttribute="centerX" constant="130"/>
                         </constraints>
                     </view>
                     <connections>
@@ -601,23 +601,23 @@
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <state key="normal" title="SUBMIT">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="115" y="185" width="91" height="30"/>
+                                    <rect key="frame" x="114" y="185" width="92" height="30"/>
                                     <mask key="constraints">
-                                        <include reference="6419"/>
-                                        <include reference="6420"/>
+                                        <include reference="6590"/>
+                                        <include reference="6591"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="6419" firstAttribute="width" constant="91"/>
-                                    <constraint id="6420" firstAttribute="height" constant="30"/>
+                                    <constraint id="6590" firstAttribute="width" constant="92"/>
+                                    <constraint id="6591" firstAttribute="height" constant="30"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="6419"/>
-                                        <exclude reference="6420"/>
+                                        <exclude reference="6590"/>
+                                        <exclude reference="6591"/>
                                     </mask>
                                 </variation>
                             </button>
@@ -704,16 +704,18 @@
                                 <exclude reference="5768"/>
                                 <exclude reference="6414"/>
                                 <exclude reference="6415"/>
-                                <exclude reference="6417"/>
-                                <exclude reference="6418"/>
                                 <exclude reference="6421"/>
                                 <exclude reference="6422"/>
                                 <exclude reference="6423"/>
-                                <exclude reference="6424"/>
                                 <exclude reference="6425"/>
                                 <exclude reference="6477"/>
                                 <exclude reference="6478"/>
                                 <exclude reference="6481"/>
+                                <exclude reference="6588"/>
+                                <exclude reference="6589"/>
+                                <exclude reference="6592"/>
+                                <exclude reference="6593"/>
+                                <exclude reference="6594"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -733,16 +735,18 @@
                                 <include reference="5768"/>
                                 <include reference="6414"/>
                                 <include reference="6415"/>
-                                <include reference="6417"/>
-                                <include reference="6418"/>
                                 <include reference="6421"/>
                                 <include reference="6422"/>
                                 <include reference="6423"/>
-                                <include reference="6424"/>
                                 <include reference="6425"/>
                                 <include reference="6477"/>
                                 <include reference="6478"/>
                                 <include reference="6481"/>
+                                <include reference="6588"/>
+                                <include reference="6589"/>
+                                <include reference="6592"/>
+                                <include reference="6593"/>
+                                <include reference="6594"/>
                             </mask>
                         </variation>
                         <constraints>
@@ -753,16 +757,18 @@
                             <constraint id="5768" firstItem="4671" firstAttribute="bottom" secondItem="5760" secondAttribute="bottom" constant="-1"/>
                             <constraint id="6414" firstItem="4671" firstAttribute="trailing" secondItem="4677" secondAttribute="trailing" constant="18"/>
                             <constraint id="6415" firstItem="4677" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="145"/>
-                            <constraint id="6417" firstItem="4671" firstAttribute="trailing" secondItem="4679" secondAttribute="trailing" constant="114"/>
-                            <constraint id="6418" firstItem="4679" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="185"/>
                             <constraint id="6421" firstItem="4671" firstAttribute="trailing" secondItem="4681" secondAttribute="trailing" constant="150"/>
                             <constraint id="6422" firstItem="4681" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="230"/>
                             <constraint id="6423" firstItem="4681" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
-                            <constraint id="6424" firstItem="4679" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
                             <constraint id="6425" firstItem="4677" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
                             <constraint id="6477" firstItem="4671" firstAttribute="trailing" secondItem="4682" secondAttribute="trailing"/>
                             <constraint id="6478" firstItem="4671" firstAttribute="bottom" secondItem="4682" secondAttribute="bottom" constant="48"/>
                             <constraint id="6481" firstItem="4682" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+                            <constraint id="6588" firstItem="4671" firstAttribute="trailing" secondItem="4679" secondAttribute="trailing" constant="114"/>
+                            <constraint id="6589" firstItem="4679" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="185"/>
+                            <constraint id="6592" firstItem="4679" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+                            <constraint id="6593" firstItem="4681" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+                            <constraint id="6594" firstItem="4682" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
                         </constraints>
                     </view>
                     <connections>

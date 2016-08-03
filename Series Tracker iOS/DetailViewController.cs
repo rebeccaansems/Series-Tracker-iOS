@@ -33,6 +33,7 @@ namespace Series_Tracker_iOS
             description = description.Replace("<em>", "").Replace("</em>", "");
             description = description.Replace("<br>", "\n");
             t_Description.Text = description;
+            
         }
 
         public override void DidReceiveMemoryWarning()
