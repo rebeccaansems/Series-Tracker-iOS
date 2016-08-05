@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Series Tracker</string>
+	<string>Series Finder</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.RebeccaAnsems.SeriesTracker</string>
 	<key>CFBundleShortVersionString</key>
