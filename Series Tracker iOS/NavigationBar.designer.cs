@@ -11,11 +11,11 @@ using UIKit;
 
 namespace Series_Tracker_iOS
 {
-	[Register ("NavigationBar")]
-	partial class NavigationBar
-	{
-		void ReleaseDesignerOutlets ()
-		{
-		}
-	}
+    [Register ("NavigationBar")]
+    partial class NavigationBar
+    {
+        void ReleaseDesignerOutlets ()
+        {
+        }
+    }
 }

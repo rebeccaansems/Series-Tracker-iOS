@@ -1,43 +1,117 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6214" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
-	<dependencies>
-		<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6207" />
-		<capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1" />
-	</dependencies>
-	<objects>
-		<placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" />
-		<placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder" />
-		<view contentMode="scaleToFill" id="iN0-l3-epB">
-			<rect key="frame" x="0.0" y="0.0" width="480" height="480" />
-			<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
-			<subviews>
-				<label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2016 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines"
-					minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-					<rect key="frame" x="20" y="439" width="441" height="21" />
-					<fontDescription key="fontDescription" type="system" pointSize="17" />
-					<color key="textColor" cocoaTouchSystemColor="darkTextColor" />
-					<nil key="highlightedColor" />
-				</label>
-				<label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Series_Tracker_iOS" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines"
-					minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-					<rect key="frame" x="20" y="140" width="441" height="43" />
-					<fontDescription key="fontDescription" type="boldSystem" pointSize="36" />
-					<color key="textColor" cocoaTouchSystemColor="darkTextColor" />
-					<nil key="highlightedColor" />
-				</label>
-			</subviews>
-			<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite" />
-			<constraints>
-				<constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="1" id="5cJ-9S-tgC" />
-				<constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk" />
-				<constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l" />
-				<constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0" />
-				<constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9" />
-				<constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g" />
-			</constraints>
-			<nil key="simulatedStatusBarMetrics" />
-			<freeformSimulatedSizeMetrics key="simulatedDestinationMetrics" />
-			<point key="canvasLocation" x="548" y="455" />
-		</view>
-	</objects>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6207"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="8" translatesAutoresizingMaskIntoConstraints="NO" image="magnifier-tool (2).png">
+                    <rect key="frame" x="84" y="102" width="420" height="420"/>
+                    <constraints>
+                        <constraint id="21" firstAttribute="width" constant="420"/>
+                        <constraint id="22" firstAttribute="height" constant="420"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2016 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
+                    <rect key="frame" x="20" y="439" width="177" height="21"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <nil key="highlightedColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="1"/>
+                    <color key="textColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                    <variation key="heightClass=regular">
+                        <rect key="frame" x="30" y="439" width="177" height="21"/>
+                        <mask key="constraints">
+                            <include reference="57"/>
+                            <include reference="58"/>
+                        </mask>
+                    </variation>
+                    <constraints>
+                        <constraint id="57" firstAttribute="width" constant="177"/>
+                        <constraint id="58" firstAttribute="height" constant="21"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="57"/>
+                            <exclude reference="58"/>
+                        </mask>
+                    </variation>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX" text="SERIES FINDER" fixedFrame="YES">
+                    <rect key="frame" x="20" y="20" width="441" height="87"/>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="40"/>
+                    <color key="textColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular">
+                        <rect key="frame" x="20" y="60" width="441" height="80"/>
+                        <mask key="constraints">
+                            <include reference="48"/>
+                            <include reference="49"/>
+                        </mask>
+                    </variation>
+                    <constraints>
+                        <constraint id="48" firstAttribute="width" constant="441"/>
+                        <constraint id="49" firstAttribute="height" constant="80"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="48"/>
+                            <exclude reference="49"/>
+                        </mask>
+                    </variation>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="6" translatesAutoresizingMaskIntoConstraints="NO" image="open-book.png">
+                    <rect key="frame" x="120" y="140" width="240" height="240"/>
+                    <constraints>
+                        <constraint id="17" firstAttribute="width" constant="240"/>
+                        <constraint id="18" firstAttribute="height" constant="240"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="0.99215686274509807" green="0.65490196078431373" blue="0.28627450980392155" alpha="1"/>
+            <constraints>
+                <constraint id="15" firstItem="iN0-l3-epB" firstAttribute="trailing" secondItem="6" secondAttribute="trailing" constant="120"/>
+                <constraint id="16" firstItem="iN0-l3-epB" firstAttribute="bottom" secondItem="6" secondAttribute="bottom" constant="100"/>
+                <constraint id="19" firstItem="iN0-l3-epB" firstAttribute="trailing" secondItem="8" secondAttribute="trailing" constant="-24"/>
+                <constraint id="20" firstItem="iN0-l3-epB" firstAttribute="bottom" secondItem="8" secondAttribute="bottom" constant="-42"/>
+                <constraint id="47" firstItem="kId-c2-rCX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60"/>
+                <constraint id="50" firstItem="kId-c2-rCX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX"/>
+                <constraint id="55" firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30"/>
+                <constraint id="56" firstItem="iN0-l3-epB" firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="548" y="455"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="47"/>
+                    <exclude reference="50"/>
+                    <exclude reference="55"/>
+                    <exclude reference="56"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular">
+                <mask key="constraints">
+                    <include reference="47"/>
+                    <include reference="50"/>
+                    <include reference="55"/>
+                    <include reference="56"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="Icon-60.png" width="60" height="60"/>
+        <image name="Icon-Small-40.png" width="40" height="40"/>
+        <image name="Icon-Small.png" width="29" height="29"/>
+        <image name="Icon.png" width="57" height="57"/>
+        <image name="settings.png" width="24" height="24"/>
+        <image name="open-book.png" width="256" height="256"/>
+        <image name="magnifier-tool (2).png" width="512" height="512"/>
+        <image name="magnifier-tool.png" width="24" height="24"/>
+    </resources>
 </document>

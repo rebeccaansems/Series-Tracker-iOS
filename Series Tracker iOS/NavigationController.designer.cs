@@ -11,19 +11,19 @@ using UIKit;
 
 namespace Series_Tracker_iOS
 {
-	[Register ("NavigationController")]
-	partial class NavigationController
-	{
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		NavigationBar NavBar { get; set; }
+    [Register ("NavigationController")]
+    partial class NavigationController
+    {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        Series_Tracker_iOS.NavigationBar NavBar { get; set; }
 
-		void ReleaseDesignerOutlets ()
-		{
-			if (NavBar != null) {
-				NavBar.Dispose ();
-				NavBar = null;
-			}
-		}
-	}
+        void ReleaseDesignerOutlets ()
+        {
+            if (NavBar != null) {
+                NavBar.Dispose ();
+                NavBar = null;
+            }
+        }
+    }
 }

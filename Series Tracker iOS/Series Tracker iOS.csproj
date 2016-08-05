@@ -171,6 +171,8 @@
     <BundleResource Include="Resources\Icon.png" />
     <BundleResource Include="settings.png" />
     <BundleResource Include="magnifier-tool.png" />
+    <BundleResource Include="Resources\open-book.png" />
+    <BundleResource Include="Resources\magnifier-tool %282%29.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />

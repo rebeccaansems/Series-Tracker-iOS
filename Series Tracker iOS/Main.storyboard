@@ -104,7 +104,7 @@
                                 <rect key="frame" x="80" y="305" width="160" height="240"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <rect key="frame" x="20" y="284" width="280" height="276"/>
@@ -188,15 +188,12 @@
                                 <exclude reference="6608"/>
                                 <exclude reference="6609"/>
                                 <exclude reference="6618"/>
-                                <exclude reference="6619"/>
                                 <exclude reference="6622"/>
-                                <exclude reference="6624"/>
                                 <exclude reference="6625"/>
-                                <exclude reference="6626"/>
                                 <exclude reference="6629"/>
-                                <exclude reference="6641"/>
                                 <exclude reference="6642"/>
-                                <exclude reference="6645"/>
+                                <exclude reference="6658"/>
+                                <exclude reference="6659"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -211,30 +208,24 @@
                                 <include reference="6608"/>
                                 <include reference="6609"/>
                                 <include reference="6618"/>
-                                <include reference="6619"/>
                                 <include reference="6622"/>
-                                <include reference="6624"/>
                                 <include reference="6625"/>
-                                <include reference="6626"/>
                                 <include reference="6629"/>
-                                <include reference="6641"/>
                                 <include reference="6642"/>
-                                <include reference="6645"/>
+                                <include reference="6658"/>
+                                <include reference="6659"/>
                             </mask>
                         </variation>
                         <constraints>
                             <constraint id="6608" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="32" secondAttribute="trailing" constant="20"/>
                             <constraint id="6609" firstItem="32" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="230"/>
                             <constraint id="6618" firstItem="MMQ-IT-qOo" firstAttribute="bottom" secondItem="68" secondAttribute="bottom" constant="8"/>
-                            <constraint id="6619" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="68" secondAttribute="trailing" constant="20"/>
                             <constraint id="6622" firstItem="68" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
-                            <constraint id="6624" firstItem="32" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
                             <constraint id="6625" firstItem="31" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="75"/>
-                            <constraint id="6626" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="31" secondAttribute="trailing" constant="110"/>
                             <constraint id="6629" firstItem="31" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
-                            <constraint id="6641" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="6635" secondAttribute="trailing" constant="20"/>
                             <constraint id="6642" firstItem="6635" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="256"/>
-                            <constraint id="6645" firstItem="6635" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
+                            <constraint id="6658" firstItem="6635" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
+                            <constraint id="6659" firstItem="32" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
@@ -604,20 +595,20 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="114" y="185" width="92" height="30"/>
+                                    <rect key="frame" x="114" y="185" width="92" height="36"/>
                                     <mask key="constraints">
-                                        <include reference="6590"/>
-                                        <include reference="6591"/>
+                                        <include reference="6655"/>
+                                        <include reference="6656"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="6590" firstAttribute="width" constant="92"/>
-                                    <constraint id="6591" firstAttribute="height" constant="30"/>
+                                    <constraint id="6655" firstAttribute="width" constant="92"/>
+                                    <constraint id="6656" firstAttribute="height" constant="36"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="6590"/>
-                                        <exclude reference="6591"/>
+                                        <exclude reference="6655"/>
+                                        <exclude reference="6656"/>
                                     </mask>
                                 </variation>
                             </button>
@@ -711,11 +702,10 @@
                                 <exclude reference="6477"/>
                                 <exclude reference="6478"/>
                                 <exclude reference="6481"/>
-                                <exclude reference="6588"/>
-                                <exclude reference="6589"/>
-                                <exclude reference="6592"/>
                                 <exclude reference="6593"/>
                                 <exclude reference="6594"/>
+                                <exclude reference="6654"/>
+                                <exclude reference="6657"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -742,11 +732,10 @@
                                 <include reference="6477"/>
                                 <include reference="6478"/>
                                 <include reference="6481"/>
-                                <include reference="6588"/>
-                                <include reference="6589"/>
-                                <include reference="6592"/>
                                 <include reference="6593"/>
                                 <include reference="6594"/>
+                                <include reference="6654"/>
+                                <include reference="6657"/>
                             </mask>
                         </variation>
                         <constraints>
@@ -764,11 +753,10 @@
                             <constraint id="6477" firstItem="4671" firstAttribute="trailing" secondItem="4682" secondAttribute="trailing"/>
                             <constraint id="6478" firstItem="4671" firstAttribute="bottom" secondItem="4682" secondAttribute="bottom" constant="48"/>
                             <constraint id="6481" firstItem="4682" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
-                            <constraint id="6588" firstItem="4671" firstAttribute="trailing" secondItem="4679" secondAttribute="trailing" constant="114"/>
-                            <constraint id="6589" firstItem="4679" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="185"/>
-                            <constraint id="6592" firstItem="4679" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
                             <constraint id="6593" firstItem="4681" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
                             <constraint id="6594" firstItem="4682" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
+                            <constraint id="6654" firstItem="4679" firstAttribute="top" secondItem="4671" secondAttribute="top" constant="185"/>
+                            <constraint id="6657" firstItem="4679" firstAttribute="centerX" secondItem="4671" secondAttribute="centerX"/>
                         </constraints>
                     </view>
                     <connections>
@@ -799,5 +787,7 @@
         <image name="Icon-60.png" width="60" height="60"/>
         <image name="Icon.png" width="57" height="57"/>
         <image name="Icon-Small.png" width="29" height="29"/>
+        <image name="open-book.png" width="256" height="256"/>
+        <image name="magnifier-tool (2).png" width="512" height="512"/>
     </resources>
 </document>
