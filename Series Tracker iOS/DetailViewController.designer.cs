@@ -24,7 +24,7 @@ namespace Series_Tracker_iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextView t_ISBN { get; set; }
+        UIKit.UILabel t_ISBN { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]

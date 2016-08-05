@@ -34,6 +34,7 @@ namespace Series_Tracker_iOS
             NavigationItem.HidesBackButton = true;
 
             TabBar.SelectedItem = b_BarScan;
+            UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(227, 118, 2);
 
             b_Scan.TouchUpInside += BarcodeButtonClicked;
             b_Submit.TouchUpInside += SubmitButtonClicked;

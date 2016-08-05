@@ -35,7 +35,7 @@ namespace Series_Tracker_iOS
         UIKit.UISwitch b_ShowPublicationDates { get; set; }
 
         [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
+        [GeneratedCode("iOS Designer", "1.0")]
         UIKit.UITabBar TabBar { get; set; }
 
         void ReleaseDesignerOutlets ()

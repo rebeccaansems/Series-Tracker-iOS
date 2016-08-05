@@ -104,25 +104,25 @@
                                 <rect key="frame" x="80" y="305" width="160" height="240"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="20" y="284" width="280" height="276"/>
+                                    <rect key="frame" x="10" y="284" width="305" height="276"/>
                                     <mask key="constraints">
-                                        <include reference="6620"/>
-                                        <include reference="6621"/>
+                                        <include reference="6687"/>
+                                        <include reference="6688"/>
                                     </mask>
                                 </variation>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1"/>
                                 <color key="tintColor" colorSpace="calibratedRGB" red="0" green="0.52549019607843139" blue="1" alpha="1"/>
                                 <constraints>
-                                    <constraint id="6620" firstAttribute="width" constant="280"/>
-                                    <constraint id="6621" firstAttribute="height" constant="276"/>
+                                    <constraint id="6687" firstAttribute="width" constant="305"/>
+                                    <constraint id="6688" firstAttribute="height" constant="276"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="6620"/>
-                                        <exclude reference="6621"/>
+                                        <exclude reference="6687"/>
+                                        <exclude reference="6688"/>
                                     </mask>
                                 </variation>
                             </textView>
@@ -150,30 +150,47 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6635" translatesAutoresizingMaskIntoConstraints="NO" text="ISBN" textAlignment="center" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="12" width="160" height="240"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="6677" translatesAutoresizingMaskIntoConstraints="NO" image="Line.jpg">
+                                <rect key="frame" x="70" y="47" width="160" height="240"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="20" y="256" width="280" height="30"/>
+                                    <rect key="frame" x="0.0" y="282" width="320" height="2"/>
                                     <mask key="constraints">
-                                        <include reference="6643"/>
-                                        <include reference="6644"/>
+                                        <include reference="6680"/>
                                     </mask>
                                 </variation>
-                                <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="1"/>
                                 <constraints>
-                                    <constraint id="6643" firstAttribute="width" constant="280"/>
-                                    <constraint id="6644" firstAttribute="height" constant="30"/>
+                                    <constraint id="6680" firstAttribute="width" constant="320"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="6643"/>
-                                        <exclude reference="6644"/>
+                                        <exclude reference="6680"/>
                                     </mask>
                                 </variation>
-                            </textView>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ISBN" lineBreakMode="tailTruncation" minimumFontSize="10" id="6698" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
+                                <rect key="frame" x="32" y="140" width="42" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <rect key="frame" x="20" y="256" width="280" height="20"/>
+                                    <mask key="constraints">
+                                        <include reference="6701"/>
+                                        <include reference="6702"/>
+                                    </mask>
+                                </variation>
+                                <constraints>
+                                    <constraint id="6701" firstAttribute="width" constant="280"/>
+                                    <constraint id="6702" firstAttribute="height" constant="20"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6701"/>
+                                        <exclude reference="6702"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1"/>
                         <variation key="default">
@@ -182,18 +199,22 @@
                                 <exclude reference="32"/>
                                 <exclude reference="33"/>
                                 <exclude reference="68"/>
-                                <exclude reference="6635"/>
+                                <exclude reference="6677"/>
+                                <exclude reference="6698"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="6608"/>
-                                <exclude reference="6609"/>
-                                <exclude reference="6618"/>
-                                <exclude reference="6622"/>
                                 <exclude reference="6625"/>
                                 <exclude reference="6629"/>
-                                <exclude reference="6642"/>
-                                <exclude reference="6658"/>
-                                <exclude reference="6659"/>
+                                <exclude reference="6678"/>
+                                <exclude reference="6679"/>
+                                <exclude reference="6686"/>
+                                <exclude reference="6689"/>
+                                <exclude reference="6692"/>
+                                <exclude reference="6693"/>
+                                <exclude reference="6697"/>
+                                <exclude reference="6699"/>
+                                <exclude reference="6700"/>
+                                <exclude reference="6703"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -202,30 +223,37 @@
                                 <include reference="32"/>
                                 <include reference="33"/>
                                 <include reference="68"/>
-                                <include reference="6635"/>
+                                <include reference="6677"/>
+                                <include reference="6698"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="6608"/>
-                                <include reference="6609"/>
-                                <include reference="6618"/>
-                                <include reference="6622"/>
                                 <include reference="6625"/>
                                 <include reference="6629"/>
-                                <include reference="6642"/>
-                                <include reference="6658"/>
-                                <include reference="6659"/>
+                                <include reference="6678"/>
+                                <include reference="6679"/>
+                                <include reference="6686"/>
+                                <include reference="6689"/>
+                                <include reference="6692"/>
+                                <include reference="6693"/>
+                                <include reference="6697"/>
+                                <include reference="6699"/>
+                                <include reference="6700"/>
+                                <include reference="6703"/>
                             </mask>
                         </variation>
                         <constraints>
-                            <constraint id="6608" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="32" secondAttribute="trailing" constant="20"/>
-                            <constraint id="6609" firstItem="32" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="230"/>
-                            <constraint id="6618" firstItem="MMQ-IT-qOo" firstAttribute="bottom" secondItem="68" secondAttribute="bottom" constant="8"/>
-                            <constraint id="6622" firstItem="68" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
                             <constraint id="6625" firstItem="31" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="75"/>
                             <constraint id="6629" firstItem="31" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
-                            <constraint id="6642" firstItem="6635" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="256"/>
-                            <constraint id="6658" firstItem="6635" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
-                            <constraint id="6659" firstItem="32" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
+                            <constraint id="6678" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="6677" secondAttribute="trailing"/>
+                            <constraint id="6679" firstItem="6677" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="282"/>
+                            <constraint id="6686" firstItem="MMQ-IT-qOo" firstAttribute="bottom" secondItem="68" secondAttribute="bottom" constant="8"/>
+                            <constraint id="6689" firstItem="68" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX" constant="2"/>
+                            <constraint id="6692" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="32" secondAttribute="trailing" constant="20"/>
+                            <constraint id="6693" firstItem="32" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="230"/>
+                            <constraint id="6697" firstItem="32" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
+                            <constraint id="6699" firstItem="MMQ-IT-qOo" firstAttribute="trailing" secondItem="6698" secondAttribute="trailing" constant="20"/>
+                            <constraint id="6700" firstItem="6698" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="256"/>
+                            <constraint id="6703" firstItem="6698" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
@@ -233,7 +261,7 @@
                         <outlet property="t_Title" destination="32" id="name-outlet-32"/>
                         <outlet property="i_Image" destination="31" id="name-outlet-31"/>
                         <outlet property="t_Description" destination="68" id="name-outlet-68"/>
-                        <outlet property="t_ISBN" destination="6635" id="name-outlet-6635"/>
+                        <outlet property="t_ISBN" destination="6698" id="name-outlet-6698"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
@@ -781,13 +809,14 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <resources>
-        <image name="magnifier-tool.png" width="24" height="24"/>
-        <image name="settings.png" width="24" height="24"/>
         <image name="Icon-Small-40.png" width="40" height="40"/>
         <image name="Icon-60.png" width="60" height="60"/>
         <image name="Icon.png" width="57" height="57"/>
         <image name="Icon-Small.png" width="29" height="29"/>
         <image name="open-book.png" width="256" height="256"/>
         <image name="magnifier-tool (2).png" width="512" height="512"/>
+        <image name="magnifier-tool.png" width="24" height="24"/>
+        <image name="Line.jpg" width="100" height="2"/>
+        <image name="settings.png" width="24" height="24"/>
     </resources>
 </document>

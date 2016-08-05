@@ -20,6 +20,8 @@ namespace Series_Tracker_iOS
             NavigationItem.Title = "Options";
 
             TabBar.SelectedItem = b_BarOptions;
+            UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(227, 118, 2);
+
 
             b_IncludeAllBooks.On = BarcodeScanController.showAllBooks;
             b_ShowPublicationDates.On = BarcodeScanController.showPublicationDates;

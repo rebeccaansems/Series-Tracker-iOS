@@ -173,6 +173,7 @@
     <BundleResource Include="magnifier-tool.png" />
     <BundleResource Include="Resources\open-book.png" />
     <BundleResource Include="Resources\magnifier-tool %282%29.png" />
+    <BundleResource Include="Line.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />

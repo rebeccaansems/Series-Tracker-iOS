@@ -22,10 +22,10 @@ namespace Series_Tracker_iOS
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
-            
+
             t_Title.Text = BarcodeScanController.TitleURL[itemSelected];
             i_Image.Image = FromUrl(BarcodeScanController.ImgURL[itemSelected]);
-            t_ISBN.Text = BarcodeScanController.isbnURL[itemSelected];
+            t_ISBN.Text = "ISBN: "+BarcodeScanController.isbnURL[itemSelected];
 
             string description = BarcodeScanController.DescriptionsURL[itemSelected];
             description = description.Replace("<italics>", "").Replace("</italics>", "");
@@ -33,13 +33,8 @@ namespace Series_Tracker_iOS
             description = description.Replace("<em>", "").Replace("</em>", "");
             description = description.Replace("<br>", "\n");
             t_Description.Text = description;
-            
-        }
 
-        public override void DidReceiveMemoryWarning()
-        {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
+            t_Description.Font = UIFont.FromName("Helvetica", 16f);
         }
 
         static UIImage FromUrl(string uri)
