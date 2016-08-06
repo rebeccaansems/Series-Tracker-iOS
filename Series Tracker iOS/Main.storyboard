@@ -10,15 +10,15 @@
             <objects>
                 <tableViewController title="Master" id="pGg-6v-bdr" customClass="MasterViewController" customModuleProvider="" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" colorSpace="calibratedRGB" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="5718" style="IBUITableViewCellStyleSubtitle" id="m0d-ak-lc9" rowHeight="44" detailTextLabel="5719">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m0d-ak-lc9" id="d3P-M7-ByW">
-                                    <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5718">
@@ -67,7 +67,7 @@
                         <viewControllerLayoutGuide type="bottom" id="a0L-h9-sNL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MMQ-IT-qOo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="33" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -107,7 +107,7 @@
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="10" y="284" width="305" height="276"/>
+                                    <rect key="frame" x="9.5" y="284" width="305" height="276"/>
                                     <mask key="constraints">
                                         <include reference="6687"/>
                                         <include reference="6688"/>
@@ -273,7 +273,7 @@
                 <navigationController definesPresentationContext="YES" id="4263" sceneMemberID="viewController" customClass="NavigationController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4266" customClass="NavigationBar">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <color key="barTintColor" colorSpace="calibratedRGB" red="1" green="0.60392156862745094" blue="0.17254901960784314" alpha="1"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
@@ -297,31 +297,31 @@
                         <viewControllerLayoutGuide type="bottom" id="4606"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4609">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Include all books" lineBreakMode="tailTruncation" minimumFontSize="10" id="4612" translatesAutoresizingMaskIntoConstraints="NO">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Include novellas and book sets" lineBreakMode="tailTruncation" minimumFontSize="10" id="4612" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="20" y="420" width="230" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="20" y="90" width="230" height="21"/>
+                                    <rect key="frame" x="20" y="88" width="230" height="21"/>
                                     <mask key="constraints">
-                                        <include reference="4632"/>
-                                        <include reference="4633"/>
+                                        <include reference="6715"/>
+                                        <include reference="6716"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="4632" firstAttribute="width" constant="230"/>
-                                    <constraint id="4633" firstAttribute="height" constant="21"/>
+                                    <constraint id="6715" firstAttribute="width" constant="230"/>
+                                    <constraint id="6716" firstAttribute="height" constant="21"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="4632"/>
-                                        <exclude reference="4633"/>
+                                        <exclude reference="6715"/>
+                                        <exclude reference="6716"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -348,24 +348,24 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Show book covers" lineBreakMode="tailTruncation" minimumFontSize="10" id="4618" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="20" y="520" width="230" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="20" y="140" width="230" height="21"/>
+                                    <rect key="frame" x="20" y="138" width="230" height="21"/>
                                     <mask key="constraints">
-                                        <include reference="4637"/>
-                                        <include reference="4638"/>
+                                        <include reference="6719"/>
+                                        <include reference="6720"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="4637" firstAttribute="width" constant="230"/>
-                                    <constraint id="4638" firstAttribute="height" constant="21"/>
+                                    <constraint id="6719" firstAttribute="width" constant="230"/>
+                                    <constraint id="6720" firstAttribute="height" constant="21"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="4637"/>
-                                        <exclude reference="4638"/>
+                                        <exclude reference="6719"/>
+                                        <exclude reference="6720"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -392,24 +392,24 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Show publication dates" lineBreakMode="tailTruncation" minimumFontSize="10" id="4624" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="20" y="470" width="230" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="20" y="190" width="230" height="21"/>
+                                    <rect key="frame" x="20" y="188" width="230" height="21"/>
                                     <mask key="constraints">
-                                        <include reference="4642"/>
-                                        <include reference="4643"/>
+                                        <include reference="6723"/>
+                                        <include reference="6724"/>
                                     </mask>
                                 </variation>
                                 <constraints>
-                                    <constraint id="4642" firstAttribute="width" constant="230"/>
-                                    <constraint id="4643" firstAttribute="height" constant="21"/>
+                                    <constraint id="6723" firstAttribute="width" constant="230"/>
+                                    <constraint id="6724" firstAttribute="height" constant="21"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="4642"/>
-                                        <exclude reference="4643"/>
+                                        <exclude reference="6723"/>
+                                        <exclude reference="6724"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -467,15 +467,6 @@
                                 <exclude reference="5752"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4630"/>
-                                <exclude reference="4631"/>
-                                <exclude reference="4634"/>
-                                <exclude reference="4635"/>
-                                <exclude reference="4636"/>
-                                <exclude reference="4639"/>
-                                <exclude reference="4640"/>
-                                <exclude reference="4641"/>
-                                <exclude reference="4644"/>
                                 <exclude reference="5755"/>
                                 <exclude reference="5756"/>
                                 <exclude reference="6566"/>
@@ -487,6 +478,12 @@
                                 <exclude reference="6576"/>
                                 <exclude reference="6577"/>
                                 <exclude reference="6580"/>
+                                <exclude reference="6713"/>
+                                <exclude reference="6714"/>
+                                <exclude reference="6717"/>
+                                <exclude reference="6718"/>
+                                <exclude reference="6721"/>
+                                <exclude reference="6722"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -500,15 +497,6 @@
                                 <include reference="5752"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4630"/>
-                                <include reference="4631"/>
-                                <include reference="4634"/>
-                                <include reference="4635"/>
-                                <include reference="4636"/>
-                                <include reference="4639"/>
-                                <include reference="4640"/>
-                                <include reference="4641"/>
-                                <include reference="4644"/>
                                 <include reference="5755"/>
                                 <include reference="5756"/>
                                 <include reference="6566"/>
@@ -520,18 +508,15 @@
                                 <include reference="6576"/>
                                 <include reference="6577"/>
                                 <include reference="6580"/>
+                                <include reference="6713"/>
+                                <include reference="6714"/>
+                                <include reference="6717"/>
+                                <include reference="6718"/>
+                                <include reference="6721"/>
+                                <include reference="6722"/>
                             </mask>
                         </variation>
                         <constraints>
-                            <constraint id="4630" firstItem="4612" firstAttribute="leading" secondItem="4609" secondAttribute="leading" constant="20"/>
-                            <constraint id="4631" firstItem="4612" firstAttribute="top" secondItem="4609" secondAttribute="top" constant="90"/>
-                            <constraint id="4634" firstItem="4609" firstAttribute="centerX" secondItem="4612" secondAttribute="centerX" constant="25"/>
-                            <constraint id="4635" firstItem="4618" firstAttribute="leading" secondItem="4609" secondAttribute="leading" constant="20"/>
-                            <constraint id="4636" firstItem="4618" firstAttribute="top" secondItem="4609" secondAttribute="top" constant="140"/>
-                            <constraint id="4639" firstItem="4609" firstAttribute="centerX" secondItem="4618" secondAttribute="centerX" constant="25"/>
-                            <constraint id="4640" firstItem="4624" firstAttribute="leading" secondItem="4609" secondAttribute="leading" constant="20"/>
-                            <constraint id="4641" firstItem="4624" firstAttribute="top" secondItem="4609" secondAttribute="top" constant="190"/>
-                            <constraint id="4644" firstItem="4609" firstAttribute="centerX" secondItem="4624" secondAttribute="centerX" constant="25"/>
                             <constraint id="5755" firstItem="4609" firstAttribute="trailing" secondItem="5752" secondAttribute="trailing"/>
                             <constraint id="5756" firstItem="4609" firstAttribute="bottom" secondItem="5752" secondAttribute="bottom" constant="-1"/>
                             <constraint id="6566" firstItem="4609" firstAttribute="trailing" secondItem="4615" secondAttribute="trailing" constant="-11"/>
@@ -543,6 +528,12 @@
                             <constraint id="6576" firstItem="4609" firstAttribute="trailing" secondItem="4627" secondAttribute="trailing" constant="-11"/>
                             <constraint id="6577" firstItem="4627" firstAttribute="top" secondItem="4609" secondAttribute="top" constant="184"/>
                             <constraint id="6580" firstItem="4627" firstAttribute="centerX" secondItem="4609" secondAttribute="centerX" constant="130"/>
+                            <constraint id="6713" firstItem="4612" firstAttribute="leading" secondItem="4609" secondAttribute="leading" constant="20"/>
+                            <constraint id="6714" firstItem="4612" firstAttribute="top" secondItem="4609" secondAttribute="top" constant="88"/>
+                            <constraint id="6717" firstItem="4618" firstAttribute="leading" secondItem="4609" secondAttribute="leading" constant="20"/>
+                            <constraint id="6718" firstItem="4618" firstAttribute="top" secondItem="4609" secondAttribute="top" constant="138"/>
+                            <constraint id="6721" firstItem="4624" firstAttribute="leading" secondItem="4609" secondAttribute="leading" constant="20"/>
+                            <constraint id="6722" firstItem="4624" firstAttribute="top" secondItem="4609" secondAttribute="top" constant="188"/>
                         </constraints>
                     </view>
                     <connections>
@@ -567,7 +558,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4668"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4671">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1"/>
                         <subviews>
