@@ -98,7 +98,7 @@ namespace Series_Tracker_iOS
 
                 if (BarcodeScanController.k_ScannedBookName.Equals(objects[indexPath.Row].ToString()))
                 {
-                    cell.BackgroundColor = UIColor.FromRGB(245, 245, 200);
+                    cell.BackgroundColor = UIColor.FromRGB(255, 237, 217);
                 }
 
                 return cell;
