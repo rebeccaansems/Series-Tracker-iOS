@@ -49,13 +49,13 @@ namespace Series_Tracker_iOS
 
         public void ShowPublicationDates(object sender, EventArgs e)
         {
-            BarcodeScanController.k_showPublicationDates = b_ShowPublicationDates.On;
+            BarcodeScanController.k_showPublicationDates = !b_ShowPublicationDates.On;
             NSUserDefaults.StandardUserDefaults.SetBool(b_ShowPublicationDates.On, "showPublicationDates");
         }
 
         public void ShowBookCovers(object sender, EventArgs e)
         {
-            BarcodeScanController.k_showBookCovers = b_ShowBookCovers.On;
+            BarcodeScanController.k_showBookCovers = !b_ShowBookCovers.On;
             NSUserDefaults.StandardUserDefaults.SetBool(b_ShowBookCovers.On, "showBookCovers");
         }
     }

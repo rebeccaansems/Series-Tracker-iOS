@@ -109,6 +109,9 @@
     <None Include="GettingStarted.Xamarin" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <InterfaceDefinition Include="Main6.storyboard" />
+    <InterfaceDefinition Include="Main4.storyboard" />
+    <InterfaceDefinition Include="Main6P.storyboard" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -120,7 +123,7 @@
     <Compile Include="MasterViewController.designer.cs">
       <DependentUpon>MasterViewController.cs</DependentUpon>
     </Compile>
-    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="Main5.storyboard" />
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
       <InProject>false</InProject>

@@ -51,8 +51,45 @@ namespace Series_Tracker_iOS
 
         public override void OnActivated(UIApplication application)
         {
-            // Restart any tasks that were paused (or not yet started) while the application was inactive. 
-            // If the application was previously in the background, optionally refresh the user interface.
+            if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone)
+            {
+                if (UIScreen.MainScreen.Bounds.Size.Height == 480) //iPhone 4
+                {
+                    Window = new UIWindow(UIScreen.MainScreen.Bounds);
+                    UIStoryboard board = UIStoryboard.FromName("Main4", null);
+                    UIViewController rootView = (UIViewController)board.InstantiateViewController("NavigationController");
+
+                    Window.RootViewController = rootView;
+                    Window.MakeKeyAndVisible();
+                }
+                else if (UIScreen.MainScreen.Bounds.Size.Height == 568) //iPhone 5
+                {
+                    Window = new UIWindow(UIScreen.MainScreen.Bounds);
+                    UIStoryboard board = UIStoryboard.FromName("Main5", null);
+                    UIViewController rootView = (UIViewController)board.InstantiateViewController("NavigationController");
+
+                    Window.RootViewController = rootView;
+                    Window.MakeKeyAndVisible();
+                }
+                else if (UIScreen.MainScreen.Bounds.Size.Height == 667) //iPhone 6
+                {
+                    Window = new UIWindow(UIScreen.MainScreen.Bounds);
+                    UIStoryboard board = UIStoryboard.FromName("Main6", null);
+                    UIViewController rootView = (UIViewController)board.InstantiateViewController("NavigationController");
+
+                    Window.RootViewController = rootView;
+                    Window.MakeKeyAndVisible();
+                }
+                else if (UIScreen.MainScreen.Bounds.Size.Height == 736) //iPhone 6+
+                {
+                    Window = new UIWindow(UIScreen.MainScreen.Bounds);
+                    UIStoryboard board = UIStoryboard.FromName("Main6P", null);
+                    UIViewController rootView = (UIViewController)board.InstantiateViewController("NavigationController");
+
+                    Window.RootViewController = rootView;
+                    Window.MakeKeyAndVisible();
+                }
+            }
         }
 
         public override void WillTerminate(UIApplication application)

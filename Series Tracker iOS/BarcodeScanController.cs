@@ -44,8 +44,8 @@ namespace Series_Tracker_iOS
             b_Spinner.Hidden = true;
 
             k_showAllBooks = NSUserDefaults.StandardUserDefaults.BoolForKey("showAllBooks");
-            k_showPublicationDates = NSUserDefaults.StandardUserDefaults.BoolForKey("showPublicationDates");
-            k_showBookCovers = NSUserDefaults.StandardUserDefaults.BoolForKey("showBookCovers");
+            k_showPublicationDates = !NSUserDefaults.StandardUserDefaults.BoolForKey("showPublicationDates");
+            k_showBookCovers = !NSUserDefaults.StandardUserDefaults.BoolForKey("showBookCovers");
 
             var g = new UITapGestureRecognizer(() => View.EndEditing(true));
             g.CancelsTouchesInView = false; //for iOS5
