@@ -49,7 +49,7 @@ namespace Series_Tracker_iOS
             static readonly NSString CellIdentifier = new NSString("Cell");
             readonly List<object> objects = new List<object>();
             readonly MasterViewController controller;
-
+            
             public DataSource(MasterViewController controller)
             {
                 this.controller = controller;
@@ -94,6 +94,11 @@ namespace Series_Tracker_iOS
                 else
                 {
                     cell.ImageView.Image = null;
+                }
+
+                if (BarcodeScanController.k_ScannedBookName.Equals(objects[indexPath.Row].ToString()))
+                {
+                    cell.BackgroundColor = UIColor.FromRGB(245, 245, 200);
                 }
 
                 return cell;

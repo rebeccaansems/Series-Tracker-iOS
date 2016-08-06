@@ -11,8 +11,7 @@ namespace Series_Tracker_iOS
 {
     partial class BarcodeScanController : UIViewController
     {
-
-        public static string k_ISBN, k_SeriesName;
+        public static string k_ISBN, k_SeriesName, k_ScannedBookName;
         public static List<string> k_TitleURL = new List<string>();
         public static List<string> k_ImgURL = new List<string>();
         public static List<string> k_PubDateURL = new List<string>();
@@ -116,6 +115,8 @@ namespace Series_Tracker_iOS
 
             if (GG_Json.Length != 47)
             {
+                k_ScannedBookName = getBetween(GG_Json, "\"title\": \"", " (");
+
                 string GR_url = "https://www.goodreads.com/book/isbn_to_id/" + k_ISBN;
                 var GR_html = await client.GetStringAsync(GR_url);
                 string GR_SeriesCode = getBetween(GR_html, "<meta property=\"og:url\" content=\"https://www.goodreads.com/work/best_book/", "\"/>");
