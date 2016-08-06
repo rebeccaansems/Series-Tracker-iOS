@@ -22,6 +22,8 @@ namespace Series_Tracker_iOS
 
         public static bool k_showAllBooks = false, k_showPublicationDates = true, k_showBookCovers = true;
 
+        private bool userTypedISBN = false;
+
         public BarcodeScanController(IntPtr handle) : base(handle)
         {
 
@@ -64,6 +66,8 @@ namespace Series_Tracker_iOS
         {
             k_ISBN = t_InputISBN.Text;
 
+            userTypedISBN = true;
+
             FindBookInformation();
         }
 
@@ -79,6 +83,8 @@ namespace Series_Tracker_iOS
         {
             var scanner = new ZXing.Mobile.MobileBarcodeScanner();
             var isbn = await scanner.Scan();
+
+            userTypedISBN = false;
 
             if (isbn != null)
             {
@@ -163,17 +169,36 @@ namespace Series_Tracker_iOS
             }
             else
             {
-                UIAlertView alert = new UIAlertView()
+                UIAlertView alert;
+
+                if (userTypedISBN)
                 {
-                    Title = "Invalid ISBN",
-                    Message = "ISBN must be 13 numbers long, start with 9, and exist, like: 9780439554930"
-                };
+                    alert = new UIAlertView()
+                    {
+                        Title = "Invalid ISBN",
+                        Message = "ISBN must be 13 numbers long, start with 9, and exist, like: 9780439554930."
+                    };
+                }
+                else
+                {
+                    alert = new UIAlertView()
+                    {
+                        Title = "Barcode Scan Failed",
+                        Message = "Scan failed to register a valid ISBN, please type in the ISBN-13 manually."
+                    };
+                }
+
                 alert.AddButton("OK");
-                alert.AddButton("Retry");
                 alert.Show();
+
+                k_ISBN = null;
 
                 b_Spinner.Hidden = true;
                 b_Spinner.StopAnimating();
+
+                b_Submit.Enabled = true;
+                b_Scan.Enabled = true;
+                b_BarOptions.Enabled = true;
             }
         }
 
