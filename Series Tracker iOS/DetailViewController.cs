@@ -21,13 +21,14 @@ namespace Series_Tracker_iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.
 
-            t_Title.Text = BarcodeScanController.TitleURL[itemSelected];
-            i_Image.Image = FromUrl(BarcodeScanController.ImgURL[itemSelected]);
-            t_ISBN.Text = "ISBN: "+BarcodeScanController.isbnURL[itemSelected];
+            NavigationItem.Title = BarcodeScanController.k_TitleURL[itemSelected];
 
-            string description = BarcodeScanController.DescriptionsURL[itemSelected];
+            t_Title.Text = BarcodeScanController.k_TitleURL[itemSelected];
+            i_Image.Image = FromUrl(BarcodeScanController.k_ImgURL[itemSelected]);
+            t_ISBN.Text = "ISBN: "+BarcodeScanController.k_isbnURL[itemSelected];
+
+            string description = BarcodeScanController.k_DescriptionsURL[itemSelected];
             description = description.Replace("<italics>", "").Replace("</italics>", "");
             description = description.Replace("<strong>", "").Replace("</strong>", "");
             description = description.Replace("<em>", "").Replace("</em>", "");

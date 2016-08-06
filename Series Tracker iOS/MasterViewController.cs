@@ -19,11 +19,12 @@ namespace Series_Tracker_iOS
         {
             base.ViewDidLoad();
 
+            NavigationItem.Title = BarcodeScanController.k_SeriesName;
             TableView.Source = dataSource = new DataSource(this);
 
-            for (int i = (BarcodeScanController.numberSeries-1); i >= 0; i--)
+            for (int i = (BarcodeScanController.k_numberSeries-1); i >= 0; i--)
             {
-                dataSource.Objects.Insert(0, BarcodeScanController.TitleURL[i]);
+                dataSource.Objects.Insert(0, BarcodeScanController.k_TitleURL[i]);
             }
         }
 
@@ -77,18 +78,18 @@ namespace Series_Tracker_iOS
 
                 cell.TextLabel.Text = objects[indexPath.Row].ToString();
 
-                if (BarcodeScanController.showPublicationDates)
+                if (BarcodeScanController.k_showPublicationDates)
                 {
-                    cell.DetailTextLabel.Text = BarcodeScanController.PubDateURL[indexPath.Row];
+                    cell.DetailTextLabel.Text = BarcodeScanController.k_PubDateURL[indexPath.Row];
                 }
                 else
                 {
                     cell.DetailTextLabel.Text = "";
                 }
 
-                if (BarcodeScanController.showBookCovers)
+                if (BarcodeScanController.k_showBookCovers)
                 {
-                    cell.ImageView.Image = FromUrl(BarcodeScanController.ImgURL[indexPath.Row]);
+                    cell.ImageView.Image = FromUrl(BarcodeScanController.k_ImgURL[indexPath.Row]);
                 }
                 else
                 {

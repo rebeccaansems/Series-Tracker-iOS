@@ -12,15 +12,15 @@ namespace Series_Tracker_iOS
     partial class BarcodeScanController : UIViewController
     {
 
-        public static string ISBN;
-        public static List<string> TitleURL = new List<string>();
-        public static List<string> ImgURL = new List<string>();
-        public static List<string> PubDateURL = new List<string>();
-        public static List<string> isbnURL = new List<string>();
-        public static List<string> DescriptionsURL = new List<string>();
-        public static int numberSeries;
+        public static string k_ISBN, k_SeriesName;
+        public static List<string> k_TitleURL = new List<string>();
+        public static List<string> k_ImgURL = new List<string>();
+        public static List<string> k_PubDateURL = new List<string>();
+        public static List<string> k_isbnURL = new List<string>();
+        public static List<string> k_DescriptionsURL = new List<string>();
+        public static int k_numberSeries;
 
-        public static bool showAllBooks = true, showPublicationDates = true, showBookCovers = true;
+        public static bool k_showAllBooks = false, k_showPublicationDates = true, k_showBookCovers = true;
 
         public BarcodeScanController(IntPtr handle) : base(handle)
         {
@@ -42,9 +42,9 @@ namespace Series_Tracker_iOS
             
             b_Spinner.Hidden = true;
 
-            showAllBooks = NSUserDefaults.StandardUserDefaults.BoolForKey("showAllBooks");
-            showPublicationDates = NSUserDefaults.StandardUserDefaults.BoolForKey("showPublicationDates");
-            showBookCovers = NSUserDefaults.StandardUserDefaults.BoolForKey("showBookCovers");
+            k_showAllBooks = NSUserDefaults.StandardUserDefaults.BoolForKey("showAllBooks");
+            k_showPublicationDates = NSUserDefaults.StandardUserDefaults.BoolForKey("showPublicationDates");
+            k_showBookCovers = NSUserDefaults.StandardUserDefaults.BoolForKey("showBookCovers");
 
             var g = new UITapGestureRecognizer(() => View.EndEditing(true));
             g.CancelsTouchesInView = false; //for iOS5
@@ -62,7 +62,7 @@ namespace Series_Tracker_iOS
 
         void SubmitButtonClicked(object sender, EventArgs e)
         {
-            ISBN = t_InputISBN.Text;
+            k_ISBN = t_InputISBN.Text;
 
             FindBookInformation();
         }
@@ -82,7 +82,7 @@ namespace Series_Tracker_iOS
 
             if (isbn != null)
             {
-                ISBN = isbn.ToString();
+                k_ISBN = isbn.ToString();
                 FindBookInformation();
             }
         }
@@ -96,21 +96,21 @@ namespace Series_Tracker_iOS
             b_Spinner.Hidden = false;
             b_Spinner.StartAnimating();
 
-            TitleURL = new List<string>();
-            ImgURL = new List<string>();
-            PubDateURL = new List<string>();
-            DescriptionsURL = new List<string>();
+            k_TitleURL = new List<string>();
+            k_ImgURL = new List<string>();
+            k_PubDateURL = new List<string>();
+            k_DescriptionsURL = new List<string>();
 
             var client = new HttpClient();
 
             //get Series information
 
-            string GG_url = "https://www.googleapis.com/books/v1/volumes?q=+isbn:" + ISBN;
+            string GG_url = "https://www.googleapis.com/books/v1/volumes?q=+isbn:" + k_ISBN;
             string GG_Json = await client.GetStringAsync(GG_url);
 
             if (GG_Json.Length != 47)
             {
-                string GR_url = "https://www.goodreads.com/book/isbn_to_id/" + ISBN;
+                string GR_url = "https://www.goodreads.com/book/isbn_to_id/" + k_ISBN;
                 var GR_html = await client.GetStringAsync(GR_url);
                 string GR_SeriesCode = getBetween(GR_html, "<meta property=\"og:url\" content=\"https://www.goodreads.com/work/best_book/", "\"/>");
 
@@ -136,21 +136,24 @@ namespace Series_Tracker_iOS
                 }
                 else
                 {
+                    string seriesName = getBetween(GR_XML, "<title>", "</title>");
+                    k_SeriesName = seriesName.Remove(0, 10).Replace("]", "").Replace(">", "");
+
                     GR_url = "https://www.goodreads.com/series/" + GR_SeriesID + "?format=xml&key=" + Config.GR_Key;
                     GR_XML = await client.GetStringAsync(GR_url);
 
-                    if (showAllBooks)
+                    if (k_showAllBooks)
                     {
-                        numberSeries = Int32.Parse(getBetween(GR_XML, "<series_works_count>", "</series_works_count>"));
+                        k_numberSeries = Int32.Parse(getBetween(GR_XML, "<series_works_count>", "</series_works_count>"));
                     }
                     else
                     {
-                        numberSeries = Int32.Parse(getBetween(GR_XML, "<primary_work_count>", "</primary_work_count>"));
+                        k_numberSeries = Int32.Parse(getBetween(GR_XML, "<primary_work_count>", "</primary_work_count>"));
                     }
 
                     GR_XML = RemoveTop(GR_XML);
 
-                    BookInformation(GR_XML, showAllBooks);
+                    BookInformation(GR_XML, k_showAllBooks);
 
                     b_Spinner.Hidden = true;
                     b_Spinner.StopAnimating();
@@ -176,10 +179,10 @@ namespace Series_Tracker_iOS
 
         void BookInformation(string XML, bool includeAll)
         {
-            for (int i = 0; i < numberSeries; i++)
+            for (int i = 0; i < k_numberSeries; i++)
             {
-                DescriptionsURL.Add("");
-                isbnURL.Add("");
+                k_DescriptionsURL.Add("");
+                k_isbnURL.Add("");
 
                 if (getBetween(XML, "<user_position>", "</user_position>").Length <= 2 && !includeAll)
                 {
@@ -200,9 +203,9 @@ namespace Series_Tracker_iOS
 
         async void GetBookInformation(string XML, int i)
         {
-            TitleURL.Add(getBetween(XML, "<title>", " (").Replace("</title>", ""));
-            ImgURL.Add(getBetween(XML, "<![CDATA[", "]]>"));
-            PubDateURL.Add(getBetween(XML, "<original_publication_year>", "</original_publication_year>"));
+            k_TitleURL.Add(getBetween(XML, "<title>", " (").Replace("</title>", ""));
+            k_ImgURL.Add(getBetween(XML, "<![CDATA[", "]]>"));
+            k_PubDateURL.Add(getBetween(XML, "<original_publication_year>", "</original_publication_year>"));
 
             var client = new HttpClient();
 
@@ -212,10 +215,10 @@ namespace Series_Tracker_iOS
             var GR_XML = await client.GetStringAsync(GR_url);
 
             XMLFirstPass = getBetween(GR_XML, "<isbn13>", "</isbn13>"); ;
-            isbnURL[i] = getBetween(XMLFirstPass, "<![CDATA[", "]]>");
+            k_isbnURL[i] = getBetween(XMLFirstPass, "<![CDATA[", "]]>");
 
             XMLFirstPass = getBetween(GR_XML, "<description>", "</description>");
-            DescriptionsURL[i] = getBetween(XMLFirstPass, "<![CDATA[", "]]>");
+            k_DescriptionsURL[i] = getBetween(XMLFirstPass, "<![CDATA[", "]]>");
         }
 
         string RemoveTop(string text)
