@@ -45,7 +45,6 @@ namespace Series_Tracker_iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITabBar TabBar { get; set; }
-        
 
         void ReleaseDesignerOutlets ()
         {
