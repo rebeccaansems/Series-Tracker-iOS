@@ -44,8 +44,18 @@ namespace Series_Tracker_iOS
             b_Spinner.Hidden = true;
 
             k_showAllBooks = NSUserDefaults.StandardUserDefaults.BoolForKey("showAllBooks");
-            k_showPublicationDates = !NSUserDefaults.StandardUserDefaults.BoolForKey("showPublicationDates");
-            k_showBookCovers = !NSUserDefaults.StandardUserDefaults.BoolForKey("showBookCovers");
+
+            if (!NSUserDefaults.StandardUserDefaults.BoolForKey("notFirstSession"))
+            {
+                k_showPublicationDates = !NSUserDefaults.StandardUserDefaults.BoolForKey("showPublicationDates");
+                k_showBookCovers = !NSUserDefaults.StandardUserDefaults.BoolForKey("showBookCovers");
+            }
+            else
+            {
+                k_showPublicationDates = NSUserDefaults.StandardUserDefaults.BoolForKey("showPublicationDates");
+                k_showBookCovers = NSUserDefaults.StandardUserDefaults.BoolForKey("showBookCovers");
+                NSUserDefaults.StandardUserDefaults.SetBool(true, "showAllBooks");
+            }
 
             var g = new UITapGestureRecognizer(() => View.EndEditing(true));
             g.CancelsTouchesInView = false; //for iOS5
