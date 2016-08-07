@@ -25,7 +25,6 @@ namespace Series_Tracker_iOS
 #if ENABLE_TEST_CLOUD
 			Xamarin.Calabash.Start();
 #endif
-
             return true;
         }
 

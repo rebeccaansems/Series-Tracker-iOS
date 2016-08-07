@@ -6,6 +6,7 @@ using System.CodeDom.Compiler;
 using UIKit;
 using System.Net.Http;
 using System.Threading.Tasks;
+using ZXing.Mobile;
 
 namespace Series_Tracker_iOS
 {
@@ -22,6 +23,7 @@ namespace Series_Tracker_iOS
         public static bool k_showAllBooks = false, k_showPublicationDates = true, k_showBookCovers = true;
 
         private bool userTypedISBN = false;
+        private MobileBarcodeScanner scanner;
 
         public BarcodeScanController(IntPtr handle) : base(handle)
         {
@@ -31,6 +33,9 @@ namespace Series_Tracker_iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            var options = new MobileBarcodeScanningOptions();
+            options.PossibleFormats = new List< ZXing.BarcodeFormat>() {  ZXing.BarcodeFormat.EAN_13 };
 
             NavigationItem.HidesBackButton = true;
 
@@ -73,8 +78,6 @@ namespace Series_Tracker_iOS
 
         void SubmitButtonClicked(object sender, EventArgs e)
         {
-            k_ISBN = t_InputISBN.Text;
-
             userTypedISBN = true;
 
             FindBookInformation();
@@ -90,7 +93,7 @@ namespace Series_Tracker_iOS
 
         async void BarcodeButtonClicked(object sender, EventArgs e)
         {
-            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            scanner = new MobileBarcodeScanner(this.NavigationController);
             var isbn = await scanner.Scan();
 
             userTypedISBN = false;
