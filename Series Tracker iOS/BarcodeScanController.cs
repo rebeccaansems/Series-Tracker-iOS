@@ -152,6 +152,10 @@ namespace Series_Tracker_iOS
 
                     b_Spinner.Hidden = true;
                     b_Spinner.StopAnimating();
+
+                    b_Submit.Enabled = true;
+                    b_Scan.Enabled = true;
+                    b_BarOptions.Enabled = true;
                 }
                 else
                 {
@@ -176,6 +180,10 @@ namespace Series_Tracker_iOS
 
                     b_Spinner.Hidden = true;
                     b_Spinner.StopAnimating();
+
+                    b_Submit.Enabled = true;
+                    b_Scan.Enabled = true;
+                    b_BarOptions.Enabled = true;
 
                     this.PerformSegue("ScanComplete", this);
                 }
