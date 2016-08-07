@@ -123,10 +123,6 @@ namespace Series_Tracker_iOS
             string GG_url = "https://www.googleapis.com/books/v1/volumes?q=+isbn:" + k_ISBN;
             string GG_Json = await client.GetStringAsync(GG_url);
 
-            if (GG_Json.Length != 47)
-            {
-                k_ScannedBookName = getBetween(GG_Json, "\"title\": \"", " (");
-            }
             string GR_url = "https://www.goodreads.com/book/isbn_to_id/" + k_ISBN;
             var GR_html = await client.GetStringAsync(GR_url);
             string GR_SeriesCode = getBetween(GR_html, "<meta property=\"og:url\" content=\"https://www.goodreads.com/work/best_book/", "\"/>");
@@ -135,17 +131,19 @@ namespace Series_Tracker_iOS
             {
                 GR_url = "https://www.goodreads.com/work/" + GR_SeriesCode + "/series?format=xml&key=" + Config.GR_Key;
                 var GR_XML = await client.GetStringAsync(GR_url);
+
                 string GR_SeriesID = getBetween(GR_XML, "<series>", "<title>");
                 GR_SeriesID = getBetween(GR_SeriesID, "<id>", "</id>");
 
                 //check to ensure book is part of a series
                 if (GR_SeriesID.Equals(""))
                 {
-                    string title = getBetween(GR_html, "<title>", " by").Replace(System.Environment.NewLine, string.Empty);
+                    k_ScannedBookName = getBetween(GR_html, "<title>", " by").Replace(System.Environment.NewLine, string.Empty);
+
                     UIAlertView alert = new UIAlertView()
                     {
                         Title = "Series Nonexistent",
-                        Message = title + " is not part of a book series."
+                        Message = k_ScannedBookName + " is not part of a book series."
                     };
                     alert.AddButton("OK");
                     alert.Show();
@@ -180,10 +178,12 @@ namespace Series_Tracker_iOS
 
                     b_Spinner.Hidden = true;
                     b_Spinner.StopAnimating();
-
+                      
                     b_Submit.Enabled = true;
                     b_Scan.Enabled = true;
                     b_BarOptions.Enabled = true;
+
+                    k_ScannedBookName = getBetween(GR_html, "<title>", " (").Replace(System.Environment.NewLine, string.Empty);
 
                     this.PerformSegue("ScanComplete", this);
                 }
