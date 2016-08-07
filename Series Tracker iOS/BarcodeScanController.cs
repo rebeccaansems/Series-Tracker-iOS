@@ -47,8 +47,8 @@ namespace Series_Tracker_iOS
 
             if (!NSUserDefaults.StandardUserDefaults.BoolForKey("notFirstSession"))
             {
-                k_showPublicationDates = !NSUserDefaults.StandardUserDefaults.BoolForKey("showPublicationDates");
-                k_showBookCovers = !NSUserDefaults.StandardUserDefaults.BoolForKey("showBookCovers");
+                k_showPublicationDates = true;
+                k_showBookCovers = true;
             }
             else
             {

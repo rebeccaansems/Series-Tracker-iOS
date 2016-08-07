@@ -32,6 +32,7 @@ namespace Series_Tracker_iOS
             description = description.Replace("<italics>", "").Replace("</italics>", "");
             description = description.Replace("<strong>", "").Replace("</strong>", "");
             description = description.Replace("<em>", "").Replace("</em>", "");
+            description = description.Replace("<p>", "").Replace("</p>", "");
             description = description.Replace("<br>", "\n");
             t_Description.Text = description;
 

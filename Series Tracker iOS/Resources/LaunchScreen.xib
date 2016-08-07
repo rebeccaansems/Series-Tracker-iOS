@@ -32,7 +32,7 @@
                     </constraints>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX" text="SERIES FINDER">
-                    <rect key="frame" x="20" y="0.0" width="441" height="87"/>
+                    <rect key="frame" x="20" y="60" width="441" height="87"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="40"/>
                     <color key="textColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                     <nil key="highlightedColor"/>
@@ -40,8 +40,8 @@
                         <rect key="frame" x="20" y="60" width="441" height="80"/>
                     </variation>
                     <constraints>
-                        <constraint id="100" firstAttribute="width" constant="441"/>
-                        <constraint id="101" firstAttribute="height" constant="87"/>
+                        <constraint id="109" firstItem="kId-c2-rCX" firstAttribute="height" constant="87"/>
+                        <constraint id="110" firstItem="kId-c2-rCX" firstAttribute="width" constant="441"/>
                     </constraints>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="6" translatesAutoresizingMaskIntoConstraints="NO" image="open-book.png">
@@ -60,8 +60,8 @@
                 <constraint id="76" firstItem="iN0-l3-epB" firstAttribute="bottom" secondItem="8" secondAttribute="bottom" constant="-22"/>
                 <constraint id="79" firstItem="iN0-l3-epB" firstAttribute="trailing" secondItem="6" secondAttribute="trailing" constant="120"/>
                 <constraint id="80" firstItem="iN0-l3-epB" firstAttribute="bottom" secondItem="6" secondAttribute="bottom" constant="120"/>
-                <constraint id="102" firstItem="kId-c2-rCX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX"/>
-                <constraint id="105" firstItem="6" firstAttribute="top" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="33"/>
+                <constraint id="107" firstItem="kId-c2-rCX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60"/>
+                <constraint id="108" firstItem="kId-c2-rCX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
