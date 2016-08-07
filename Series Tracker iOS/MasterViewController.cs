@@ -22,7 +22,7 @@ namespace Series_Tracker_iOS
             NavigationItem.Title = BarcodeScanController.k_SeriesName;
             TableView.Source = dataSource = new DataSource(this);
 
-            for (int i = (BarcodeScanController.k_numberSeries-1); i >= 0; i--)
+            for (int i = (BarcodeScanController.k_numberSeries - 1); i >= 0; i--)
             {
                 dataSource.Objects.Insert(0, BarcodeScanController.k_TitleURL[i]);
             }
@@ -49,7 +49,7 @@ namespace Series_Tracker_iOS
             static readonly NSString CellIdentifier = new NSString("Cell");
             readonly List<object> objects = new List<object>();
             readonly MasterViewController controller;
-            
+
             public DataSource(MasterViewController controller)
             {
                 this.controller = controller;
@@ -96,9 +96,12 @@ namespace Series_Tracker_iOS
                     cell.ImageView.Image = null;
                 }
 
-                if (BarcodeScanController.k_ScannedBookName.Equals(objects[indexPath.Row].ToString()))
+                if(BarcodeScanController.k_ScannedBookName != null)
                 {
-                    cell.BackgroundColor = UIColor.FromRGB(255, 237, 217);
+                    if (BarcodeScanController.k_ScannedBookName.Equals(objects[indexPath.Row].ToString()))
+                    {
+                        cell.BackgroundColor = UIColor.FromRGB(255, 237, 217);
+                    }
                 }
 
                 return cell;

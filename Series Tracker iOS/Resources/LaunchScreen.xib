@@ -33,7 +33,7 @@
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX" text="SERIES FINDER">
                     <rect key="frame" x="20" y="60" width="441" height="87"/>
-                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="40"/>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
                     <color key="textColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                     <nil key="highlightedColor"/>
                     <variation key="heightClass=regular">
@@ -78,5 +78,7 @@
         <image name="magnifier-tool (2).png" width="512" height="512"/>
         <image name="magnifier-tool.png" width="24" height="24"/>
         <image name="Line.jpg" width="100" height="2"/>
+        <image name="Default-568h.png" width="320" height="568"/>
+        <image name="Default.png" width="320" height="480"/>
     </resources>
 </document>
