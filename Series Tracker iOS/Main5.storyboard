@@ -590,7 +590,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9780439554930" borderStyle="roundedRect" minimumFontSize="17" id="4677" translatesAutoresizingMaskIntoConstraints="NO" clearButtonMode="whileEditing">
                                 <rect key="frame" x="18" y="130" width="284" height="30"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <rect key="frame" x="18" y="145" width="284" height="30"/>
                                     <mask key="constraints">
@@ -802,5 +802,7 @@
         <image name="magnifier-tool.png" width="24" height="24"/>
         <image name="Line.jpg" width="100" height="2"/>
         <image name="settings.png" width="24" height="24"/>
+        <image name="Default-568h.png" width="320" height="568"/>
+        <image name="Default.png" width="320" height="480"/>
     </resources>
 </document>

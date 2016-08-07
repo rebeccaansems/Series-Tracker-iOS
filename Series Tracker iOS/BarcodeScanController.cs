@@ -40,7 +40,7 @@ namespace Series_Tracker_iOS
             b_Scan.TouchUpInside += BarcodeButtonClicked;
             b_Submit.TouchUpInside += SubmitButtonClicked;
             TabBar.ItemSelected += TabBarSelected;
-            
+
             b_Spinner.Hidden = true;
 
             k_showAllBooks = NSUserDefaults.StandardUserDefaults.BoolForKey("showAllBooks");
@@ -126,11 +126,13 @@ namespace Series_Tracker_iOS
             if (GG_Json.Length != 47)
             {
                 k_ScannedBookName = getBetween(GG_Json, "\"title\": \"", " (");
+            }
+            string GR_url = "https://www.goodreads.com/book/isbn_to_id/" + k_ISBN;
+            var GR_html = await client.GetStringAsync(GR_url);
+            string GR_SeriesCode = getBetween(GR_html, "<meta property=\"og:url\" content=\"https://www.goodreads.com/work/best_book/", "\"/>");
 
-                string GR_url = "https://www.goodreads.com/book/isbn_to_id/" + k_ISBN;
-                var GR_html = await client.GetStringAsync(GR_url);
-                string GR_SeriesCode = getBetween(GR_html, "<meta property=\"og:url\" content=\"https://www.goodreads.com/work/best_book/", "\"/>");
-
+            if (GR_SeriesCode.Length != 0)
+            {
                 GR_url = "https://www.goodreads.com/work/" + GR_SeriesCode + "/series?format=xml&key=" + Config.GR_Key;
                 var GR_XML = await client.GetStringAsync(GR_url);
                 string GR_SeriesID = getBetween(GR_XML, "<series>", "<title>");
