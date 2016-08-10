@@ -79,6 +79,7 @@ namespace Series_Tracker_iOS
         void SubmitButtonClicked(object sender, EventArgs e)
         {
             userTypedISBN = true;
+            k_ISBN = t_InputISBN.Text;
 
             FindBookInformation();
         }
