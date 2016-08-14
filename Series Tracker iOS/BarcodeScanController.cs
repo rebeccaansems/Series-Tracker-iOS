@@ -35,7 +35,7 @@ namespace Series_Tracker_iOS
             base.ViewDidLoad();
 
             var options = new MobileBarcodeScanningOptions();
-            options.PossibleFormats = new List< ZXing.BarcodeFormat>() {  ZXing.BarcodeFormat.EAN_13 };
+            options.PossibleFormats = new List<ZXing.BarcodeFormat>() { ZXing.BarcodeFormat.EAN_13 };
 
             NavigationItem.HidesBackButton = true;
 
@@ -48,19 +48,22 @@ namespace Series_Tracker_iOS
 
             b_Spinner.Hidden = true;
 
-            k_showAllBooks = NSUserDefaults.StandardUserDefaults.BoolForKey("showAllBooks");
 
             if (!NSUserDefaults.StandardUserDefaults.BoolForKey("notFirstSession"))
             {
                 k_showPublicationDates = true;
                 k_showBookCovers = true;
+                NSUserDefaults.StandardUserDefaults.SetBool(k_showPublicationDates, "showPublicationDates");
+                NSUserDefaults.StandardUserDefaults.SetBool(k_showBookCovers, "showBookCovers");
+                NSUserDefaults.StandardUserDefaults.SetBool(true, "notFirstSession");
             }
             else
             {
                 k_showPublicationDates = NSUserDefaults.StandardUserDefaults.BoolForKey("showPublicationDates");
                 k_showBookCovers = NSUserDefaults.StandardUserDefaults.BoolForKey("showBookCovers");
-                NSUserDefaults.StandardUserDefaults.SetBool(true, "showAllBooks");
             }
+
+            k_showAllBooks = NSUserDefaults.StandardUserDefaults.BoolForKey("showAllBooks");
 
             var g = new UITapGestureRecognizer(() => View.EndEditing(true));
             g.CancelsTouchesInView = false; //for iOS5
@@ -74,6 +77,15 @@ namespace Series_Tracker_iOS
             b_Submit.Enabled = true;
             b_Scan.Enabled = true;
             b_BarOptions.Enabled = true;
+        }
+
+        public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
+
+            NSUserDefaults.StandardUserDefaults.SetBool(k_showPublicationDates, "showPublicationDates");
+            NSUserDefaults.StandardUserDefaults.SetBool(k_showBookCovers, "showBookCovers");
+            NSUserDefaults.StandardUserDefaults.SetBool(k_showAllBooks, "showAllBooks");
         }
 
         void SubmitButtonClicked(object sender, EventArgs e)
@@ -182,7 +194,7 @@ namespace Series_Tracker_iOS
 
                     b_Spinner.Hidden = true;
                     b_Spinner.StopAnimating();
-                      
+
                     b_Submit.Enabled = true;
                     b_Scan.Enabled = true;
                     b_BarOptions.Enabled = true;
