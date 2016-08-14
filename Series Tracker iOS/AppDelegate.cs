@@ -1,4 +1,6 @@
 ﻿using Foundation;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 using UIKit;
 
 namespace Series_Tracker_iOS
@@ -36,18 +38,6 @@ namespace Series_Tracker_iOS
             // Games should use this method to pause the game.
         }
 
-        public override void DidEnterBackground(UIApplication application)
-        {
-            // Use this method to release shared resources, save user data, invalidate timers and store the application state.
-            // If your application supports background exection this method is called instead of WillTerminate when the user quits.
-        }
-
-        public override void WillEnterForeground(UIApplication application)
-        {
-            // Called as part of the transiton from background to active state.
-            // Here you can undo many of the changes made on entering the background.
-        }
-
         public override void OnActivated(UIApplication application)
         {
             if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone)
@@ -56,7 +46,12 @@ namespace Series_Tracker_iOS
                 {
                     Window = new UIWindow(UIScreen.MainScreen.Bounds);
                     UIStoryboard board = UIStoryboard.FromName("Main4", null);
+
                     UIViewController rootView = (UIViewController)board.InstantiateViewController("NavigationController");
+                    if (NSUserDefaults.StandardUserDefaults.BoolForKey("saveMVC"))
+                    {
+                        rootView = (UIViewController)board.InstantiateViewController("MasterViewController");
+                    }
 
                     Window.RootViewController = rootView;
                     Window.MakeKeyAndVisible();
@@ -65,6 +60,7 @@ namespace Series_Tracker_iOS
                 {
                     Window = new UIWindow(UIScreen.MainScreen.Bounds);
                     UIStoryboard board = UIStoryboard.FromName("Main5", null);
+
                     UIViewController rootView = (UIViewController)board.InstantiateViewController("NavigationController");
 
                     Window.RootViewController = rootView;
@@ -74,7 +70,12 @@ namespace Series_Tracker_iOS
                 {
                     Window = new UIWindow(UIScreen.MainScreen.Bounds);
                     UIStoryboard board = UIStoryboard.FromName("Main6", null);
+
                     UIViewController rootView = (UIViewController)board.InstantiateViewController("NavigationController");
+                    if (NSUserDefaults.StandardUserDefaults.BoolForKey("saveMVC"))
+                    {
+                        rootView = (UIViewController)board.InstantiateViewController("MasterViewController");
+                    }
 
                     Window.RootViewController = rootView;
                     Window.MakeKeyAndVisible();
@@ -83,7 +84,12 @@ namespace Series_Tracker_iOS
                 {
                     Window = new UIWindow(UIScreen.MainScreen.Bounds);
                     UIStoryboard board = UIStoryboard.FromName("Main6P", null);
+
                     UIViewController rootView = (UIViewController)board.InstantiateViewController("NavigationController");
+                    if (NSUserDefaults.StandardUserDefaults.BoolForKey("saveMVC"))
+                    {
+                        rootView = (UIViewController)board.InstantiateViewController("MasterViewController");
+                    }
 
                     Window.RootViewController = rootView;
                     Window.MakeKeyAndVisible();
@@ -91,9 +97,33 @@ namespace Series_Tracker_iOS
             }
         }
 
+        public override void DidEnterBackground(UIApplication application)
+        {
+            //save state so going into background doesn't go back to main screen
+            if (NSUserDefaults.StandardUserDefaults.BoolForKey("saveMVC"))
+            {
+                NSUserDefaults.StandardUserDefaults.SetString(BarcodeScanController.k_SeriesName, "seriesName");
+                NSUserDefaults.StandardUserDefaults.SetString(BarcodeScanController.k_ScannedBookName, "scannedBookName");
+
+                NSUserDefaults.StandardUserDefaults.SetInt(BarcodeScanController.k_numberSeries, "numberSeries");
+
+                string titleURL = JsonConvert.SerializeObject(BarcodeScanController.k_TitleURL);
+                string pupDateURL = JsonConvert.SerializeObject(BarcodeScanController.k_PubDateURL);
+                string imgURL = JsonConvert.SerializeObject(BarcodeScanController.k_ImgURL);
+                string isbnURL = JsonConvert.SerializeObject(BarcodeScanController.k_isbnURL);
+                string descriptionURL = JsonConvert.SerializeObject(BarcodeScanController.k_DescriptionsURL);
+
+                NSUserDefaults.StandardUserDefaults.SetString(titleURL, "titleURL");
+                NSUserDefaults.StandardUserDefaults.SetString(pupDateURL, "pupDateURL");
+                NSUserDefaults.StandardUserDefaults.SetString(imgURL, "imgURL");
+                NSUserDefaults.StandardUserDefaults.SetString(isbnURL, "isbnURL");
+                NSUserDefaults.StandardUserDefaults.SetString(descriptionURL, "descriptionURL");
+            }
+        }
+
         public override void WillTerminate(UIApplication application)
         {
-            // Called when the application is about to terminate. Save data, if needed. See also DidEnterBackground.
+            NSUserDefaults.StandardUserDefaults.SetBool(false, "saveMVC");
         }
     }
 }

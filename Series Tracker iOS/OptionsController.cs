@@ -1,4 +1,5 @@
 using Foundation;
+using ObjCRuntime;
 using System;
 using System.CodeDom.Compiler;
 using UIKit;
@@ -6,10 +7,10 @@ using Xamarin.Forms;
 
 namespace Series_Tracker_iOS
 {
-	partial class OptionsController : UIViewController
-	{
-		public OptionsController (IntPtr handle) : base (handle)
-		{
+    partial class OptionsController : UIViewController
+    {
+        public OptionsController(IntPtr handle) : base(handle)
+        {
         }
 
         public override void ViewDidLoad()
@@ -21,7 +22,7 @@ namespace Series_Tracker_iOS
 
             TabBar.SelectedItem = b_BarOptions;
             UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(227, 118, 2);
-            
+
             b_IncludeAllBooks.On = BarcodeScanController.k_showAllBooks;
             b_ShowPublicationDates.On = BarcodeScanController.k_showPublicationDates;
             b_ShowBookCovers.On = BarcodeScanController.k_showBookCovers;

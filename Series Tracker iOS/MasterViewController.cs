@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Foundation;
 using UIKit;
+using Newtonsoft.Json;
 
 namespace Series_Tracker_iOS
 {
@@ -19,6 +20,8 @@ namespace Series_Tracker_iOS
         {
             base.ViewDidLoad();
 
+            string titleURL = JsonConvert.SerializeObject(BarcodeScanController.k_TitleURL);
+
             NavigationItem.Title = BarcodeScanController.k_SeriesName;
             TableView.Source = dataSource = new DataSource(this);
 
@@ -26,6 +29,8 @@ namespace Series_Tracker_iOS
             {
                 dataSource.Objects.Insert(0, BarcodeScanController.k_TitleURL[i]);
             }
+
+            NSUserDefaults.StandardUserDefaults.SetBool(true, "saveMVC");
         }
 
         public override void DidReceiveMemoryWarning()

@@ -7,6 +7,7 @@ using UIKit;
 using System.Net.Http;
 using System.Threading.Tasks;
 using ZXing.Mobile;
+using Newtonsoft.Json;
 
 namespace Series_Tracker_iOS
 {
@@ -33,6 +34,28 @@ namespace Series_Tracker_iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            
+            if (NSUserDefaults.StandardUserDefaults.BoolForKey("saveMVC"))
+            {
+                k_SeriesName = NSUserDefaults.StandardUserDefaults.StringForKey("seriesName");
+                k_ScannedBookName = NSUserDefaults.StandardUserDefaults.StringForKey("scannedBookName");
+
+                k_numberSeries = (int)NSUserDefaults.StandardUserDefaults.IntForKey("numberSeries");
+
+                string titleURL = NSUserDefaults.StandardUserDefaults.StringForKey("titleURL");
+                string pupDateURL = NSUserDefaults.StandardUserDefaults.StringForKey("pupDateURL");
+                string imgURL = NSUserDefaults.StandardUserDefaults.StringForKey("imgURL");
+                string isbnURL = NSUserDefaults.StandardUserDefaults.StringForKey("isbnURL");
+                string descriptionURL = NSUserDefaults.StandardUserDefaults.StringForKey("descriptionURL");
+
+                k_TitleURL = JsonConvert.DeserializeObject<List<string>>(titleURL);
+                k_PubDateURL = JsonConvert.DeserializeObject<List<string>>(pupDateURL);
+                k_ImgURL = JsonConvert.DeserializeObject<List<string>>(imgURL);
+                k_isbnURL = JsonConvert.DeserializeObject<List<string>>(isbnURL);
+                k_DescriptionsURL = JsonConvert.DeserializeObject<List<string>>(descriptionURL);
+
+                PerformSegue("ScanComplete", this);
+            }
 
             var options = new MobileBarcodeScanningOptions();
             options.PossibleFormats = new List<ZXing.BarcodeFormat>() { ZXing.BarcodeFormat.EAN_13 };
@@ -77,6 +100,8 @@ namespace Series_Tracker_iOS
             b_Submit.Enabled = true;
             b_Scan.Enabled = true;
             b_BarOptions.Enabled = true;
+
+            NSUserDefaults.StandardUserDefaults.SetBool(false, "saveMVC");
         }
 
         public override void ViewDidDisappear(bool animated)
